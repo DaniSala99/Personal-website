@@ -1,0 +1,19 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Node (future-proofing in case a builder is added later)
+node_modules/
+dist/
+.cache/
+
+# Logs
+*.log
