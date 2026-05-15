@@ -1,30 +1,52 @@
-# Astro Starter Kit: Portfolio
+# danielesala.com — Personal Portfolio
+
+Personal portfolio site for Daniele Sala, environmental engineer specialised in flood risk modeling, hydrological forecasting and CSRD-aligned physical risk analytics.
+
+Built with [Astro](https://astro.build/) (v6), deployed on GitHub Pages.
+
+## Stack
+
+- **Astro** — static site generator
+- **Astro Content Collections** — case study markdown files in `./case-studies/`
+- **Custom rehype plugin** — converts markdown `<img>` to `<figure class="img-placeholder">` for placeholder-aware rendering
+- **CSS custom properties** — dark/light theme via `src/styles/global.css`
+
+## Pages
+
+| Route | Description |
+|---|---|
+| `/` | Home with hero, services and case studies preview |
+| `/work/` | All case studies |
+| `/work/[slug]` | Individual case study (rendered from markdown) |
+| `/about/` | Background, experience, education |
+| `/projects/` | Lab and side projects |
+| `/contact/` | Contact links |
+
+## Development
 
 ```sh
-npm create astro@latest -- --template portfolio
+npm install
+npm run dev        # localhost:4321
+npm run build      # production build to ./dist/
+npm run preview    # preview build locally
 ```
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/portfolio)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/portfolio)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/portfolio/devcontainer.json)
+## Case studies
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+Markdown files in `./case-studies/`. Each file requires the following frontmatter:
 
-![portfolio](https://user-images.githubusercontent.com/357379/210779178-a98f0fb7-6b1a-4068-894c-8e1403e26654.jpg)
+```yaml
+title: string
+subtitle: string
+client: string
+year: string
+duration: string
+tools: [array of strings]
+hero_image: string (optional)
+```
 
-## 🧞 Commands
+## Content files
 
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+- `about-me.md` — About text (two versions: site and freelance platforms)
+- `experience.md` — CV-style experience and education
+- `taglines.md` — Headline and tagline variants
