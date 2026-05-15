@@ -1,0 +1,35 @@
+---
+import { getCollection } from 'astro:content';
+import ContactCTA from '../components/ContactCTA.astro';
+import Grid from '../components/Grid.astro';
+import Hero from '../components/Hero.astro';
+import PortfolioPreview from '../components/PortfolioPreview.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const projects = (await getCollection('work')).sort((a, b) => a.id.localeCompare(b.id));
+---
+
+<BaseLayout
+	title="Case Studies | Daniele Sala"
+	description="End-to-end hydrological and climate risk case studies — Po River, Olona flood protection, paleoclimate statistics, Red River reservoir optimization."
+>
+	<div class="stack gap-20">
+		<main class="wrapper stack gap-8">
+			<Hero
+				title="Case Studies"
+				tagline="Four projects spanning flood risk, hydrological modeling, statistical climate analysis and multi-objective reservoir optimization."
+				align="start"
+			/>
+			<Grid variant="offset">
+				{
+					projects.map((project) => (
+						<li>
+							<PortfolioPreview project={project} />
+						</li>
+					))
+				}
+			</Grid>
+		</main>
+		<ContactCTA />
+	</div>
+</BaseLayout>

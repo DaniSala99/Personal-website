@@ -1,0 +1,185 @@
+---
+import ContactCTA from '../components/ContactCTA.astro';
+import Hero from '../components/Hero.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+	title="About | Daniele Sala"
+	description="Environmental engineer specialised in hydrology and climate risk analytics. M.Sc. Politecnico di Milano 106/110. Based in Milan, working across Europe."
+>
+	<div class="stack gap-20">
+		<main class="wrapper about">
+			<Hero
+				title="About"
+				tagline="Environmental engineer specialised in hydrology, flood risk modeling and climate risk analytics."
+			/>
+
+			<section>
+				<h2 class="section-title">Background</h2>
+				<div class="content">
+					<p>
+						In September 2025, the Seveso and Bevera rivers overflowed across Northern Lombardy. I
+						was on the operational team running the hydrological alerts, post-event impact assessment
+						and institutional reporting that fed directly into Regione Lombardia's emergency
+						declarations. That kind of work — where hydrological models meet real consequences for
+						real cities — is exactly what I do as a freelancer too: flood risk modeling, climate data
+						analytics and CSRD-aligned physical risk for engineering firms, insurers and climate-tech
+						teams across Europe.
+					</p>
+				</div>
+			</section>
+
+			<section>
+				<h2 class="section-title">Experience</h2>
+				<div class="content">
+					<h3>Natural Risk Assessment Specialist — Progesi S.p.A.</h3>
+					<p class="role-period">2025 – Present</p>
+					<p>
+						Designed and operated environmental monitoring and hydrological forecasting workflows
+						powered by ICON and ECMWF numerical weather prediction models. Built decision-support
+						dashboards in Python, R and MATLAB to translate raw forecast data into actionable risk
+						signals for institutional stakeholders.
+					</p>
+					<p>
+						<strong>Selected impact case — September 2025 Seveso &amp; Bevera flood event:</strong> Led
+						end-to-end flood risk management workflow from hydrological alerting and real-time monitoring
+						to post-event impact assessment and institutional reporting, supporting municipalities and
+						Regione Lombardia in emergency state declarations and public infrastructure damage compensation
+						claims.
+					</p>
+					<p>
+						<strong>Skills demonstrated:</strong> hydrological forecasting · NWP data pipelines (ICON,
+						ECMWF-IFS) · real-time monitoring · Python/R/MATLAB dashboarding · operational decision
+						support under uncertainty · institutional reporting.
+					</p>
+					<p>
+						<em
+							>Specific deliverables and client outputs remain confidential under NDA. Methodology
+							available for discussion under mutual NDA.</em
+						>
+					</p>
+
+					<h3>Climate Data Analyst — Enel S.p.A.</h3>
+					<p class="role-period">2024</p>
+					<p>
+						Developed climate-risk analytics aligned with the EU Corporate Sustainability Reporting
+						Directive (CSRD) for a global energy infrastructure portfolio. Translated physical and
+						transition climate risks into quantitative metrics consumable by sustainability and finance
+						teams. Built Python/R automation for recurring climate data ingestion and cross-indicator
+						sustainability benchmarking.
+					</p>
+					<p>
+						<strong>Skills demonstrated:</strong> CSRD-aligned climate risk methodology · physical risk
+						modeling for energy assets · climate scenario analysis · ESG reporting workflows · global
+						portfolio analytics.
+					</p>
+					<p>
+						<em>All client data, portfolio specifics and output metrics confidential under NDA.</em>
+					</p>
+				</div>
+			</section>
+
+			<section>
+				<h2 class="section-title">Education</h2>
+				<div class="content">
+					<h3>M.Sc. Environmental and Land Planning Engineering</h3>
+					<p class="role-period">Politecnico di Milano · 2021–2024</p>
+					<p>
+						Final grade <strong>106/110</strong> · Weighted average 27.31/30<br />
+						Top coursework: Hydrogeological Risk (30/30) · Remote Sensing (30/30) · Statistical Models
+						and Stochastic Processes (29/30)
+					</p>
+
+					<h3>Erasmus Exchange</h3>
+					<p class="role-period">Universitat Politècnica de València, Spain · 2022–2023</p>
+					<p>Specialization: Water Quality, Pollution Transport, Wastewater Treatment</p>
+
+					<h3>B.Sc. Environmental Engineering</h3>
+					<p class="role-period">Politecnico di Milano · 2018–2021</p>
+				</div>
+			</section>
+
+			<section>
+				<h2 class="section-title">Certifications &amp; Languages</h2>
+				<div class="content">
+					<p>ENAC A1/A3 UAS Operator Certificate (Open Category)</p>
+					<p>Italian (native) · English (C1) · Spanish (B2)</p>
+				</div>
+			</section>
+		</main>
+
+		<ContactCTA />
+	</div>
+</BaseLayout>
+
+<style>
+	.about {
+		display: flex;
+		flex-direction: column;
+		gap: 3.5rem;
+	}
+
+	section {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+		color: var(--gray-200);
+	}
+
+	.section-title {
+		grid-column-start: 1;
+		font-size: var(--text-xl);
+		color: var(--gray-0);
+	}
+
+	.content {
+		grid-column: 2 / 4;
+		display: flex;
+		flex-direction: column;
+		gap: 0.75rem;
+	}
+
+	.content :global(h3) {
+		font-size: var(--text-lg);
+		color: var(--gray-0);
+		margin-top: 1.5rem;
+	}
+
+	.content :global(h3:first-child) {
+		margin-top: 0;
+	}
+
+	.role-period {
+		font-size: var(--text-sm);
+		color: var(--gray-400);
+		margin-top: -0.5rem;
+	}
+
+	.content :global(a) {
+		text-decoration: 1px solid underline transparent;
+		text-underline-offset: 0.25em;
+		transition: text-decoration-color var(--theme-transition);
+	}
+
+	.content :global(a:hover),
+	.content :global(a:focus) {
+		text-decoration-color: currentColor;
+	}
+
+	@media (min-width: 50em) {
+		.about {
+			display: grid;
+			grid-template-columns: 1fr 60% 1fr;
+		}
+
+		.about > :global(:first-child) {
+			grid-column-start: 2;
+		}
+
+		section {
+			display: contents;
+			font-size: var(--text-lg);
+		}
+	}
+</style>

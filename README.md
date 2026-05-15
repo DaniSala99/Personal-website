@@ -1,29 +1,30 @@
-# danielesala-portfolio
+# Astro Starter Kit: Portfolio
 
-Content source-of-truth for [danielesala.com](https://danielesala.com) — the freelance portfolio site of Daniele Sala, environmental engineer (Politecnico di Milano M.Sc., 106/110), specialised in hydrology, flood risk modeling and climate risk analytics.
-
-The actual website is built on Framer. This repository is the **canonical text source**: case studies, about, experience and taglines live here as version-controlled Markdown.
-
-## Structure
-
-```
-case-studies/                    Four PASRI-format case studies (~500–700 words each)
-├── case-study-1-po-river.md     Flagship: Po River basin irrigation impact (M.Sc. Thesis)
-├── case-study-2-olona-flood-protection.md   End-to-end flood protection workflow on the Olona River (HEC-RAS + copula)
-├── case-study-3-statistical-paleoclimate.md Validation of 11 paleoclimate reconstruction methods
-└── case-study-4-reservoir-optimization.md   Multi-objective reservoir operation on the Red River (Hoa Binh dam)
-
-about-me.md                      Two versions: A (story-driven, for Framer + LinkedIn), B (B2B, for Upwork / Malt / Toptal)
-experience.md                    Progesi + Enel NDA-safe summaries, Education, Certifications & Languages
-taglines.md                      Channel-mapped taglines (LinkedIn / Framer homepage / Upwork / email signature)
-
-img/                             Image assets per case study (PNG @300dpi, populated manually)
-├── 01-po/                       3 visuals — Po basin map, discharge timeseries, sensitivity tornado
-├── 02-olona/                    3 visuals — Olona DEM, critical hydrographs, HEC-RAS profile
-├── 03-statistical/              3 visuals — Timeseries overview, Bland-Altman, regime change
-└── 04-reservoir/                3 visuals — Red River system, Pareto front, ANN forecast
+```sh
+npm create astro@latest -- --template portfolio
 ```
 
-## License
+[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/portfolio)
+[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/portfolio)
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/portfolio/devcontainer.json)
 
-All content © Daniele Sala. Not for redistribution.
+> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+
+![portfolio](https://user-images.githubusercontent.com/357379/210779178-a98f0fb7-6b1a-4068-894c-8e1403e26654.jpg)
+
+## 🧞 Commands
+
+All commands are run from the root of the project, from a terminal:
+
+| Command                   | Action                                           |
+| :------------------------ | :----------------------------------------------- |
+| `npm install`             | Installs dependencies                            |
+| `npm run dev`             | Starts local dev server at `localhost:4321`      |
+| `npm run build`           | Build your production site to `./dist/`          |
+| `npm run preview`         | Preview your build locally, before deploying     |
+| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
+| `npm run astro -- --help` | Get help using the Astro CLI                     |
+
+## 👀 Want to learn more?
+
+Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).

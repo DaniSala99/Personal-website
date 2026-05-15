@@ -1,0 +1,97 @@
+---
+import Hero from '../components/Hero.astro';
+import Icon from '../components/Icon.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+	title="Contact | Daniele Sala"
+	description="Get in touch with Daniele Sala — available for project-based engagements in flood risk modeling, hydrological forecasting and CSRD physical risk."
+>
+	<div class="stack gap-20">
+		<main class="wrapper contact">
+			<Hero
+				title="Get in Touch"
+				tagline="Available for project-based engagements in flood risk, hydrological modeling and CSRD climate risk analytics."
+			/>
+
+			<section class="contact-links">
+				<a class="contact-item" href="mailto:danielesala.env@gmail.com">
+					<Icon icon="paper-plane-tilt" size="1.4em" />
+					<span>danielesala.env@gmail.com</span>
+				</a>
+				<a
+					class="contact-item"
+					href="https://linkedin.com/in/daniele-sala"
+					target="_blank"
+					rel="noopener noreferrer"
+				>
+					<Icon icon="linkedin-logo" size="1.4em" />
+					<span>linkedin.com/in/daniele-sala</span>
+				</a>
+				<a
+					class="contact-item"
+					href="https://github.com/DaniSala99"
+					target="_blank"
+					rel="noopener noreferrer"
+				>
+					<Icon icon="github-logo" size="1.4em" />
+					<span>github.com/DaniSala99</span>
+				</a>
+			</section>
+
+			<section class="cta-text">
+				<p>Based in Milan, Italy. Working remotely across Europe.</p>
+				<p>
+					Response within 1–2 business days. For NDA-covered project discussions, please mention it
+					in your first message.
+				</p>
+			</section>
+		</main>
+	</div>
+</BaseLayout>
+
+<style>
+	.contact {
+		display: flex;
+		flex-direction: column;
+		gap: 3.5rem;
+		padding-block: 2rem;
+	}
+
+	.contact-links {
+		display: flex;
+		flex-direction: column;
+		gap: 1.25rem;
+	}
+
+	.contact-item {
+		display: flex;
+		align-items: center;
+		gap: 0.75rem;
+		font-size: var(--text-lg);
+		color: var(--gray-200);
+		text-decoration: none;
+		transition: color var(--theme-transition);
+	}
+
+	.contact-item:hover,
+	.contact-item:focus {
+		color: var(--accent-regular);
+	}
+
+	.cta-text {
+		display: flex;
+		flex-direction: column;
+		gap: 0.75rem;
+		color: var(--gray-400);
+		font-size: var(--text-md);
+		max-width: 50ch;
+	}
+
+	@media (min-width: 50em) {
+		.contact {
+			max-width: 60ch;
+		}
+	}
+</style>
