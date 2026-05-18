@@ -108,24 +108,22 @@ const { Content } = await render(entry);
 		color: var(--gray-0);
 	}
 
-	/* Image placeholders inserted by the rehype plugin */
-	.content :global(figure.img-placeholder) {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		min-height: 14rem;
-		border: 1px dashed var(--gray-600);
-		border-radius: 1rem;
-		background: var(--gradient-subtle);
+	.content :global(figure) {
 		margin: 1.5rem 0;
 	}
 
-	.content :global(figure.img-placeholder figcaption) {
+	.content :global(figure img) {
+		width: 100%;
+		height: auto;
+		border-radius: 0.5rem;
+	}
+
+	.content :global(figure figcaption) {
 		font-size: var(--text-sm);
 		color: var(--gray-400);
 		font-style: italic;
 		text-align: center;
-		padding: 1rem;
+		padding: 0.5rem 0 0;
 	}
 
 	.back-link,
