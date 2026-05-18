@@ -7,8 +7,8 @@ Built with [Astro](https://astro.build/) (v6), deployed on GitHub Pages.
 ## Stack
 
 - **Astro** — static site generator
-- **Astro Content Collections** — case study markdown files in `./case-studies/`
-- **Custom rehype plugin** — converts markdown `<img>` to `<figure class="img-placeholder">` for placeholder-aware rendering
+- **Astro Content Collections** — case study markdown files in `src/content/work/`
+- **Custom rehype plugin** — wraps markdown `<img>` in `<figure class="img-placeholder">` with figcaptions
 - **CSS custom properties** — dark/light theme via `src/styles/global.css`
 
 ## Pages
@@ -40,7 +40,7 @@ The `aprisito` command launches the dev server and automatically opens the site 
 
 ## Case studies
 
-Markdown files in `./case-studies/`. Each file requires the following frontmatter:
+Markdown files in `src/content/work/`, loaded via Astro Content Collections. Each file requires the following frontmatter:
 
 ```yaml
 title: string
@@ -54,16 +54,16 @@ hero_image: string (optional)
 
 ## Portfolio images
 
-High-resolution case study images (300 DPI PNGs, ~4 MB total) organized in `public/portfolio/img/`:
+High-resolution case study images (300 DPI PNGs, ~4 MB total) organized in `public/portfolio/img/`. The rehype plugin automatically wraps images in `<figure>` elements with alt-text captions.
 
-| Folder | Content |
-|---|---|
-| `01-po/` | Po River Basin: basin map, discharge timeseries, sensitivity analysis |
-| `02-olona/` | Olona Flood Protection: DEM, critical hydrographs, HEC-RAS profile |
-| `03-statistical/` | Paleoclimate Statistical Analysis: reconstructions, Bland-Altman, regime change |
-| `04-reservoir/` | Reservoir Optimization (Hoa Binh): system map, Pareto front, ANN forecast |
+| Folder | Content | Slug |
+|---|---|---|
+| `01-po/` | Po River Basin: basin map, discharge timeseries, sensitivity analysis | case-study-1-po-river |
+| `02-olona/` | Olona Flood Protection: DEM, critical hydrographs, HEC-RAS profile | case-study-2-olona-flood-protection |
+| `03-statistical/` | Paleoclimate Statistical Analysis: reconstructions, Bland-Altman, regime change | case-study-3-statistical-paleoclimate |
+| `04-reservoir/` | Reservoir Optimization (Hoa Binh): system map, Pareto front, ANN forecast | case-study-4-reservoir-optimization |
 
-Each image is referenced in the corresponding case study markdown file (`case-studies/*.md`) via `![alt text](/portfolio/img/{slug}/filename.png)`.
+Images are embedded in markdown via `![alt text](/portfolio/img/{01-04}-{slug}/filename.png)` and automatically wrapped in figures with captions.
 
 ## Content files
 

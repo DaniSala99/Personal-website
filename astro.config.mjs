@@ -9,20 +9,21 @@ function rehypeImgToFigure() {
 				const child = node.children[i];
 				if (child.type === 'element' && child.tagName === 'img') {
 					const alt = (child.properties && child.properties.alt) || '';
+					const imgElement = { ...child };
+					const figureChildren = [imgElement];
+					if (alt) {
+						figureChildren.push({
+							type: 'element',
+							tagName: 'figcaption',
+							properties: {},
+							children: [{ type: 'text', value: alt }],
+						});
+					}
 					node.children[i] = {
 						type: 'element',
 						tagName: 'figure',
 						properties: { className: ['img-placeholder'] },
-						children: alt
-							? [
-									{
-										type: 'element',
-										tagName: 'figcaption',
-										properties: {},
-										children: [{ type: 'text', value: alt }],
-									},
-								]
-							: [],
+						children: figureChildren,
 					};
 				} else {
 					walk(child);

@@ -4,7 +4,7 @@ import { z } from 'astro/zod';
 
 export const collections = {
 	work: defineCollection({
-		loader: glob({ base: './case-studies', pattern: '**/*.md' }),
+		loader: glob({ base: 'src/content/work', pattern: 'case-*.md' }),
 		schema: z.object({
 			title: z.string(),
 			subtitle: z.string(),
