@@ -19,11 +19,12 @@ const projects = (await getCollection('work')).sort((a, b) => a.id.localeCompare
 	<div class="stack gap-20 lg:gap-48">
 		<div class="wrapper stack gap-8 lg:gap-20">
 			<header class="hero">
-				<Hero
-					title="Daniele Sala"
-					tagline="Hydrological Risk Modeler · Python · Fortran · GIS"
-					align="start"
-				>
+				<div class="hero-content">
+					<Hero
+						title="Daniele Sala"
+						tagline="Hydrological Risk Modeler · Python · Fortran · GIS"
+						align="start"
+					>
 					<p class="hero-cta">
 						I Help Insurers, Utilities &amp; Municipalities Quantify Water-Related Risk Before It
 						Becomes a Crisis
@@ -35,7 +36,16 @@ const projects = (await getCollection('work')).sort((a, b) => a.id.localeCompare
 						declarations. That kind of work, where hydrological models meet real consequences for
 						real cities, is exactly what I do as a freelancer too.
 					</p>
-				</Hero>
+					</Hero>
+				</div>
+				<div class="hero-portrait">
+					<img
+						src="/assets/dani.png"
+						alt="Portrait of Daniele Sala"
+						width="600"
+						height="750"
+					/>
+				</div>
 			</header>
 
 			<Skills />
@@ -79,6 +89,27 @@ const projects = (await getCollection('work')).sort((a, b) => a.id.localeCompare
 <style>
 	.hero {
 		padding-block: 2rem;
+		display: grid;
+		gap: 2.5rem;
+		align-items: center;
+	}
+
+	.hero-portrait {
+		justify-self: center;
+		max-width: 320px;
+		width: 100%;
+	}
+
+	.hero-portrait img {
+		width: 100%;
+		height: auto;
+		border-radius: 1rem;
+		display: block;
+		box-shadow:
+			0 10px 30px -10px rgba(0, 0, 0, 0.4),
+			0 0 0 1px rgba(255, 255, 255, 0.05);
+		object-fit: cover;
+		aspect-ratio: 4 / 5;
 	}
 
 	.hero-cta {
@@ -147,6 +178,16 @@ const projects = (await getCollection('work')).sort((a, b) => a.id.localeCompare
 	}
 
 	@media (min-width: 50em) {
+		.hero {
+			grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+			gap: 4rem;
+		}
+
+		.hero-portrait {
+			justify-self: end;
+			max-width: 420px;
+		}
+
 		.section {
 			grid-template-columns: repeat(4, 1fr);
 			grid-template-areas: 'header header header header' 'gallery gallery gallery gallery';

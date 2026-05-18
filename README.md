@@ -15,7 +15,7 @@ Built with [Astro](https://astro.build/) (v6), deployed on GitHub Pages.
 
 | Route | Description |
 |---|---|
-| `/` | Home with hero, services and case studies preview |
+| `/` | Home with two-column hero (text + portrait) and case studies preview |
 | `/work/` | All case studies |
 | `/work/[slug]` | Individual case study (rendered from markdown) |
 | `/about/` | Background, experience, education |
@@ -30,6 +30,13 @@ npm run dev        # localhost:4321
 npm run build      # production build to ./dist/
 npm run preview    # preview build locally
 ```
+
+### Quick start
+```sh
+aprisito           # Starts dev server and opens browser automatically
+```
+
+The `aprisito` command launches the dev server and automatically opens the site in your default browser.
 
 ## Case studies
 
