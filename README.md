@@ -52,6 +52,19 @@ tools: [array of strings]
 hero_image: string (optional)
 ```
 
+## Portfolio images
+
+High-resolution case study images (300 DPI PNGs, ~4 MB total) organized in `public/portfolio/img/`:
+
+| Folder | Content |
+|---|---|
+| `01-po/` | Po River Basin: basin map, discharge timeseries, sensitivity analysis |
+| `02-olona/` | Olona Flood Protection: DEM, critical hydrographs, HEC-RAS profile |
+| `03-statistical/` | Paleoclimate Statistical Analysis: reconstructions, Bland-Altman, regime change |
+| `04-reservoir/` | Reservoir Optimization (Hoa Binh): system map, Pareto front, ANN forecast |
+
+Each image is referenced in the corresponding case study markdown file (`case-studies/*.md`) via `![alt text](/portfolio/img/{slug}/filename.png)`.
+
 ## Content files
 
 - `about-me.md` — About text (two versions: site and freelance platforms)
