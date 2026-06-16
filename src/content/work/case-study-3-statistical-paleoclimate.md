@@ -39,7 +39,7 @@ A reproducible R workflow that takes any set of paleoclimate (or modern climate)
 
 ![Regime change detection via segmented regression on 4 representative methods](/portfolio/img/03-statistical/03_regime_change.png)
 
-## ▸ Business Impact
+## ▸ Applied Context
 
 Directly applicable for:
 - **Climate risk analytics**: defensible long-term baselines for ESRS E1 / TCFD physical-risk disclosures, where regulators ask "how do you justify your historical reference period?"

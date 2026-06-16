@@ -46,7 +46,7 @@ A complete decision-support pipeline: forecast → simulation → multi-objectiv
 
 ![ANN forecast: observed vs predicted Hoa Binh inflow](/portfolio/img/04-reservoir/03_ann_forecast.png)
 
-## ▸ Business Impact
+## ▸ Applied Context
 
 The framework generalizes beyond Hoa Binh to any reservoir system facing competing objectives:
 

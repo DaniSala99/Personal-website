@@ -39,7 +39,7 @@ A calibrated, validated water-balance model that disentangles natural hydrologic
 
 ![Sensitivity analysis: relative impact of FEST model parameters](/portfolio/img/01-po/03_sensitivity_tornado.png)
 
-## ▸ Business Impact
+## ▸ Applied Context
 
 Directly relevant for:
 - **Irrigation consortia**: resource allocation and drought planning under water concession reviews.
