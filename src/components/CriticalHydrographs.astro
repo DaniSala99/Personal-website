@@ -1,0 +1,153 @@
+---
+---
+
+<div class="hydrograph-container">
+	<figure class="hydrograph-figure">
+		<div class="canvas-wrap">
+			<canvas id="chart-lozza"></canvas>
+		</div>
+		<figcaption>Sezione Lozza — idrogrammi critici, T = 50 / 100 / 200 / 500 anni</figcaption>
+	</figure>
+	<figure class="hydrograph-figure">
+		<div class="canvas-wrap">
+			<canvas id="chart-ol7a"></canvas>
+		</div>
+		<figcaption>Sezione Ol7a — idrogrammi critici, T = 50 / 100 / 200 / 500 anni</figcaption>
+	</figure>
+</div>
+
+<script>
+const COLORS = {
+	50:  '#5eb8d8',
+	100: '#0a7a9c',
+	200: '#0a4f6e',
+	500: '#e07b3b',
+};
+
+const LOZZA = [
+	{ T: 50,  Qp: 363.63, tc: 105 },
+	{ T: 100, Qp: 465.00, tc: 95  },
+	{ T: 200, Qp: 588.74, tc: 90  },
+	{ T: 500, Qp: 789.49, tc: 85  },
+];
+
+const OL7A = [
+	{ T: 50,  Qp: 86.44,  tc: 35 },
+	{ T: 100, Qp: 106.30, tc: 30 },
+	{ T: 200, Qp: 129.34, tc: 30 },
+	{ T: 500, Qp: 165.94, tc: 25 },
+];
+
+function makeDatasets(data) {
+	return data.map(({ T, Qp, tc }) => ({
+		label: `T = ${T} anni`,
+		data: [
+			{ x: 0,      y: 0   },
+			{ x: tc / 2, y: Qp  },
+			{ x: tc,     y: 0   },
+		],
+		borderColor: COLORS[T],
+		backgroundColor: 'transparent',
+		showLine: true,
+		fill: false,
+		tension: 0,
+		pointRadius: 0,
+		pointHoverRadius: 5,
+		borderWidth: 2.5,
+	}));
+}
+
+function buildOptions(yMax) {
+	const isDark = document.documentElement.classList.contains('theme-dark');
+	const grid  = isDark ? 'rgba(255,255,255,0.07)' : 'rgba(0,0,0,0.07)';
+	const tick  = isDark ? '#c3cadb' : '#505d84';
+
+	return {
+		responsive: true,
+		maintainAspectRatio: true,
+		aspectRatio: 1.6,
+		plugins: {
+			legend: {
+				position: 'top',
+				labels: { color: tick, boxWidth: 16, padding: 14, font: { size: 13 } },
+			},
+			tooltip: {
+				mode: 'nearest',
+				intersect: false,
+				callbacks: {
+					label: (ctx) =>
+						`${ctx.dataset.label}: t = ${ctx.parsed.x} min, Q = ${ctx.parsed.y.toFixed(2)} m³/s`,
+				},
+			},
+		},
+		scales: {
+			x: {
+				type: 'linear',
+				title: { display: true, text: 'Tempo [min]', color: tick, font: { size: 13 } },
+				min: 0,
+				grid: { color: grid },
+				ticks: { color: tick },
+			},
+			y: {
+				title: { display: true, text: 'Portata [m³/s]', color: tick, font: { size: 13 } },
+				min: 0,
+				suggestedMax: yMax,
+				grid: { color: grid },
+				ticks: { color: tick },
+			},
+		},
+	};
+}
+
+const s = document.createElement('script');
+s.src = 'https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js';
+s.onload = () => {
+	new Chart(document.getElementById('chart-lozza'), {
+		type: 'scatter',
+		data: { datasets: makeDatasets(LOZZA) },
+		options: buildOptions(900),
+	});
+	new Chart(document.getElementById('chart-ol7a'), {
+		type: 'scatter',
+		data: { datasets: makeDatasets(OL7A) },
+		options: buildOptions(200),
+	});
+};
+document.head.appendChild(s);
+</script>
+
+<style>
+.hydrograph-container {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 2rem;
+	margin: 2rem 0;
+}
+
+.hydrograph-figure {
+	margin: 0;
+	padding: 1.25rem 1.25rem 0.75rem;
+	background: var(--gray-999_40);
+	border: 1px solid var(--gray-800);
+	border-radius: 0.75rem;
+}
+
+.canvas-wrap {
+	position: relative;
+	width: 100%;
+}
+
+.hydrograph-figure figcaption {
+	font-size: var(--text-sm);
+	color: var(--gray-400);
+	font-style: italic;
+	text-align: center;
+	padding: 0.5rem 0 0.25rem;
+}
+
+@media (max-width: 50em) {
+	.hydrograph-container {
+		grid-template-columns: 1fr;
+	}
+}
+</style>

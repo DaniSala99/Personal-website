@@ -8,9 +8,7 @@ duration: "Course-integrated project"
 tools: ["QGIS", "HEC-RAS (1D steady)", "R (copula, fExtremes)", "FEST", "Python"]
 ---
 
-# End-to-End Flood Protection Workflow on the Olona River: From DEM to Pluviometric Alert Thresholds
-
-*GIS basin delineation, flood frequency analysis, HEC-RAS hydraulic modeling, levee design, and bivariate copula-based dam safety verification, all on one Alpine catchment.*
+import CriticalHydrographs from '../../components/CriticalHydrographs.astro';
 
 ![Olona basin DEM and slope analysis (Ponte Gurone, ~80 km²)](/portfolio/img/02-olona/01_olona_basin_dem.png)
 
@@ -37,14 +35,14 @@ Hydraulic Protection of Territory project at Politecnico di Milano (Prof. Giovan
 
 A single, internally consistent flood-protection assessment for a real Italian catchment, covering everything a municipality, civil protection agency, or insurer would need: hydrology, hydraulics, mitigation design, dam safety, and early-warning thresholds. Each step's output is the next step's input, so assumptions and uncertainties propagate transparently.
 
-![Critical-event hydrographs at sections Lozza and Ol7a, T = 50/100/200/500](/portfolio/img/02-olona/02_critical_hydrographs.png)
+<CriticalHydrographs />
 
 ## ▸ Key Results
 
 - **Basin geomorphology characterized**: ~80 km² catchment, mean elevation 147 m, mean slope 0.146 rad, mean CN = 73.4, drainage network extracted at 1 km² threshold.
 - **Design discharges quantified** at section Ol7a: **Q₅₀ = 86 m³/s · Q₁₀₀ = 106 m³/s · Q₂₀₀ = 129 m³/s · Q₅₀₀ = 166 m³/s**, with critical durations between 25 and 35 minutes (fast-responding catchment).
 - **Hydraulic deficits localized in HEC-RAS** for the 200-year event, with levee design (1 m freeboard) restoring containment without inducing downstream flooding.
-- **Pluviometric alert threshold = 80 m³/s**, with corresponding rainfall envelopes derived for three hyetograph shapes and three AMC classes, operationally usable by a civil protection agency.
+- **Pluviometric alert threshold = 80 m³/s**, with corresponding rainfall envelopes derived for three hyetograph types and three AMC classes, operationally usable by a civil protection agency.
 - **Dam safety verified for T = 200 years** via Gumbel-copula bivariate analysis (Q-V joint distribution), with reservoir routing showing peak water level below the maximum allowed spillway elevation.
 
 ![HEC-RAS 1D profile of the Olona section under T = 200 years, with levee design](/portfolio/img/02-olona/03_hecras_profile.png)

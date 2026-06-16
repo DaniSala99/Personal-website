@@ -8,10 +8,6 @@ duration: "Team project"
 tools: ["MATLAB", "ANN (feedforward)", "NSGA-II", "EMODPS", "Radial Basis Functions"]
 ---
 
-# Multi-Objective Reservoir Operation: Trading Off Hydropower vs. Flood Risk on the Red River
-
-*A neural-network inflow forecast and an evolutionary policy search for the Hoa Binh dam, protecting 16M people in Hanoi while keeping the lights on in Vietnam.*
-
 ![Red River basin and Hoa Binh reservoir system](/portfolio/img/04-reservoir/01_red_river_system.png)
 
 ## ▸ The Challenge

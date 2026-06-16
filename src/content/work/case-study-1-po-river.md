@@ -8,10 +8,6 @@ duration: "12 months"
 tools: ["FEST (Fortran)", "Python", "R", "QGIS", "MERIDA dataset"]
 ---
 
-# Quantifying the Hydrologic Impact of Agricultural Irrigation in the Po River Basin
-
-*A decade of meteo-hydrological data, a process-based hydrological model, and clear answers on irrigation's footprint on Italy's largest river basin.*
-
 ![Po River Basin: sub-catchments and measurement stations](/portfolio/img/01-po/01_po_basin_map.png)
 
 ## ▸ The Challenge

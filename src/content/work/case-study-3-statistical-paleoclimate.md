@@ -8,10 +8,6 @@ duration: "Team project"
 tools: ["R", "Bland-Altman analysis", "Shapiro-Wilk test", "Paired t-test", "Linear regression with breakpoints"]
 ---
 
-# Validating 11 Paleoclimate Reconstruction Methods Across 1,000 Years of European Temperatures
-
-*How do you trust temperature data that nobody measured? Statistical validation of proxy-based reconstructions from 500 BC to 2018.*
-
 ![Time series of 11 paleoclimate reconstruction methods](/portfolio/img/03-statistical/01_timeseries_overview.png)
 
 ## ▸ The Challenge
@@ -32,7 +28,7 @@ Politecnico di Milano team project for the *Statistical Models and Stochastic Pr
 
 A reproducible R workflow that takes any set of paleoclimate (or modern climate) time series and outputs: pairwise bias matrices, agreement intervals, regime-change diagnostics, and a synthesis on which methods can (and cannot) be combined for downstream use.
 
-![Bland-Altman analysis of dendrochronology methods](/portfolio/img/03-statistical/02_bland_altman.png)
+![Bland-Altman analysis of dendrochronology methods](/portfolio/img/03-statistical/02_bland_altman.jpg)
 
 ## ▸ Key Results
 

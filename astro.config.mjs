@@ -1,5 +1,6 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
+import mdx from '@astrojs/mdx';
 
 function rehypeImgToFigure() {
 	return (tree) => {
@@ -35,6 +36,7 @@ function rehypeImgToFigure() {
 }
 
 export default defineConfig({
+	integrations: [mdx()],
 	markdown: {
 		rehypePlugins: [rehypeImgToFigure],
 	},
