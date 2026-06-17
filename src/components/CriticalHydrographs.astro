@@ -6,55 +6,47 @@
 		<div class="canvas-wrap">
 			<canvas id="chart-lozza"></canvas>
 		</div>
-		<figcaption>Sezione Lozza — idrogrammi critici, T = 50 / 100 / 200 / 500 anni</figcaption>
+		<figcaption>Sezione Lozza — critical discharge envelope (T = 50 / 100 / 200 / 500 anni)</figcaption>
 	</figure>
 	<figure class="hydrograph-figure">
 		<div class="canvas-wrap">
 			<canvas id="chart-ol7a"></canvas>
 		</div>
-		<figcaption>Sezione Ol7a — idrogrammi critici, T = 50 / 100 / 200 / 500 anni</figcaption>
+		<figcaption>Sezione Ol7a — critical discharge envelope (T = 50 / 100 / 200 / 500 anni)</figcaption>
 	</figure>
 </div>
 
 <script>
-const COLORS = {
-	50:  '#5eb8d8',
-	100: '#0a7a9c',
-	200: '#0a4f6e',
-	500: '#e07b3b',
-};
-
-const LOZZA = [
-	{ T: 50,  Qp: 363.63, tc: 105 },
-	{ T: 100, Qp: 465.00, tc: 95  },
-	{ T: 200, Qp: 588.74, tc: 90  },
-	{ T: 500, Qp: 789.49, tc: 85  },
+// Peak points (tc/2, Qp) for each return period, sorted by tc/2 ascending,
+// prefixed by the origin — this traces the envelope of critical discharges.
+const LOZZA_ENV = [
+	{ x: 0,    y: 0      },
+	{ x: 42.5, y: 789.49 },  // T = 500
+	{ x: 45,   y: 588.74 },  // T = 200
+	{ x: 47.5, y: 465.00 },  // T = 100
+	{ x: 52.5, y: 363.63 },  // T = 50
 ];
 
-const OL7A = [
-	{ T: 50,  Qp: 86.44,  tc: 35 },
-	{ T: 100, Qp: 106.30, tc: 30 },
-	{ T: 200, Qp: 129.34, tc: 30 },
-	{ T: 500, Qp: 165.94, tc: 25 },
+const OL7A_ENV = [
+	{ x: 0,    y: 0      },
+	{ x: 12.5, y: 165.94 },  // T = 500
+	{ x: 15,   y: 129.34 },  // T = 200 (max at tc/2 = 15 min)
+	{ x: 17.5, y: 86.44  },  // T = 50
 ];
 
-function makeDatasets(data) {
-	return data.map(({ T, Qp, tc }) => ({
-		label: `T = ${T} anni`,
-		data: [
-			{ x: 0,      y: 0   },
-			{ x: tc / 2, y: Qp  },
-			{ x: tc,     y: 0   },
-		],
-		borderColor: COLORS[T],
-		backgroundColor: 'transparent',
+function makeDataset(data) {
+	return [{
+		label: 'Critical discharge envelope',
+		data,
+		borderColor: '#e07b3b',
+		backgroundColor: 'rgba(224, 123, 59, 0.08)',
 		showLine: true,
 		fill: false,
-		tension: 0,
-		pointRadius: 0,
-		pointHoverRadius: 5,
+		tension: 0.35,
+		pointRadius: 4,
+		pointHoverRadius: 6,
 		borderWidth: 2.5,
-	}));
+	}];
 }
 
 function buildOptions(yMax) {
@@ -76,7 +68,7 @@ function buildOptions(yMax) {
 				intersect: false,
 				callbacks: {
 					label: (ctx) =>
-						`${ctx.dataset.label}: t = ${ctx.parsed.x} min, Q = ${ctx.parsed.y.toFixed(2)} m³/s`,
+						`t = ${ctx.parsed.x} min, Q = ${ctx.parsed.y.toFixed(2)} m³/s`,
 				},
 			},
 		},
@@ -104,12 +96,12 @@ s.src = 'https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js';
 s.onload = () => {
 	new Chart(document.getElementById('chart-lozza'), {
 		type: 'scatter',
-		data: { datasets: makeDatasets(LOZZA) },
+		data: { datasets: makeDataset(LOZZA_ENV) },
 		options: buildOptions(900),
 	});
 	new Chart(document.getElementById('chart-ol7a'), {
 		type: 'scatter',
-		data: { datasets: makeDatasets(OL7A) },
+		data: { datasets: makeDataset(OL7A_ENV) },
 		options: buildOptions(200),
 	});
 };
