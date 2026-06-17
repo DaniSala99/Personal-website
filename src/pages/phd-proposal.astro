@@ -8,20 +8,20 @@ import Icon from '../components/Icon.astro';
 
 <BaseLayout
 	title="PhD Research Proposal | Daniele Sala"
-	description="PhD project plan: Monitoring and Predicting Droughts on National Scale — a satellite-integrated, groundwater-coupled hybrid modelling framework for Denmark. DREAM Programme, Aalborg University."
+	description="PhD project plan: Forest-Water Relations During Drought — isotopic and micrometeorological quantification of minor water pathways in stand-scale forest water budgets. ForFuS Doctoral Training Unit, Luxembourg Institute of Science and Technology."
 >
 	<div class="stack gap-20">
 		<main class="wrapper stack gap-10">
 			<Hero
 				title="PhD Research Proposal"
-				tagline="Monitoring and Predicting Droughts on National Scale: A Satellite-Integrated, Groundwater-Coupled Hybrid Modelling Framework for Denmark"
+				tagline="Forest-Water Relations During Drought: Isotopic and Micrometeorological Quantification of Minor Water Pathways in Stand-Scale Forest Water Budgets"
 				align="start"
 			/>
 
 			<div class="meta-bar">
-				<span class="meta-item"><strong>Programme:</strong> DREAM PhD · Aalborg University</span>
-				<span class="meta-item"><strong>Duration:</strong> 36 months</span>
-				<span class="meta-item"><strong>Date:</strong> May 2026</span>
+				<span class="meta-item"><strong>Programme:</strong> ForFuS Doctoral Training Unit · LIST (Luxembourg)</span>
+				<span class="meta-item"><strong>Duration:</strong> 48 months</span>
+				<span class="meta-item"><strong>Date:</strong> June 2026</span>
 				<a href="/docs/research-proposal.pdf" target="_blank" class="meta-download">
 					<Icon icon="arrow-right" size="1em" /> Download PDF
 				</a>
@@ -32,11 +32,16 @@ import Icon from '../components/Icon.astro';
 				<!-- ABSTRACT -->
 				<section class="abstract-box">
 					<p>
-						The PhD will deliver a satellite-fed VIC Denmark system producing a probabilistic
-						four-pillar combined drought index and short- to seasonal-scale predictions of water
-						dynamics. It closes a structural gap in Denmark's drought early warning landscape by
-						coupling groundwater state to a national-scale land surface model and integrating
-						multi-source satellite observations via ensemble data assimilation.
+						Forest water budgets are poorly constrained at the process level during drought: current
+						evapotranspiration partitioning frameworks assign the dominant flux to canopy transpiration
+						and leave forest floor evaporation as a residual absorbed by measurement error, while foliar
+						water uptake — the direct absorption of water through leaf surfaces during fog, dew, or
+						wetting events — remains essentially absent from operational models. This PhD will quantify
+						these under-constrained water pathways using stable isotopic tracers (δ¹⁸O, δ²H) and
+						sub-canopy micrometeorological monitoring across experimental forest stands in Luxembourg,
+						Switzerland, and the Netherlands, and integrate the resulting process understanding into a
+						stand-scale ecohydrological modelling framework within the ForFuS interdisciplinary doctoral
+						training unit at the Luxembourg Institute of Science and Technology (LIST).
 					</p>
 				</section>
 
@@ -44,24 +49,36 @@ import Icon from '../components/Icon.astro';
 				<section>
 					<h2>1. Problem Statement and Motivation</h2>
 					<p>
-						The 2018 Danish drought caused agricultural losses exceeding <strong>DKK 6 billion</strong>
-						and exposed a structural gap in the national early warning landscape. Operational systems
-						such as <strong>HIP</strong> and the <strong>DK model</strong> deliver high-resolution
-						diagnostics but lack probabilistic, satellite-integrated outlooks at sub-seasonal to
-						seasonal lead times.
+						The dominant evapotranspiration partitioning frameworks used in forest hydrology —
+						<strong>Penman-Monteith</strong> and <strong>Shuttleworth-Wallace</strong> — rest on the
+						assumption that canopy transpiration accounts for the majority of the forest water flux.
+						Forest floor evaporation, the evaporation from litter, moss, and bare soil beneath the
+						canopy, is routinely treated as a minor residual. In practice, stand-level eddy covariance
+						datasets frequently exhibit energy balance non-closure on the order of 10–30% of net
+						radiation, and forest floor evaporation is precisely the term most likely to be subsumed
+						into this residual error. The result is that one of the pathways most sensitive to
+						drought-induced canopy thinning and understorey change is also the least well constrained
+						observationally.
 					</p>
 					<p>
-						Meanwhile, macro-scale land surface models such as <strong>VIC</strong> — the model
-						targeted by the DREAM call — lack a prognostic groundwater state. In a country where
-						more than 99% of drinking water originates from aquifers, where water tables typically
-						lie 1–5 metres below surface, and where more than half of the agricultural area is
-						sub-surface drained, this gap is a first-order limitation.
+						Foliar water uptake — direct leaf-surface absorption during fog, dew, or rain-on-drought
+						events — adds a further dimension that existing measurement frameworks cannot resolve
+						independently. During severe water stress, when soil water potential drops below a critical
+						threshold, the hydraulic gradient along the soil-plant-atmosphere continuum can reverse at
+						the leaf-atmosphere interface, making the canopy a transient net water importer. Neither
+						<strong>sap flow sensors</strong> (which measure xylem water flux, not foliar absorption)
+						nor <strong>above-canopy eddy covariance</strong> (which integrates over the entire
+						canopy-atmosphere interface) can isolate this pathway in isolation. Stable water isotopes
+						offer a tracer-based route around this measurement barrier, but their application to
+						distinguishing foliar uptake from transpiration remains methodologically contested.
 					</p>
 					<p>
-						Forootan et al. (2024) showed that the severity of the 2017–2021 European drought is
-						systematically underestimated in non-assimilated W3RA — confirming that closing this
-						loop through groundwater coupling, multi-source data assimilation, and hybrid
-						physics/ML integration is both timely and necessary.
+						The frequency and severity of drought events in central Europe has increased markedly in
+						recent decades, with documented consequences for forest water status and mortality risk
+						[<em>CITATION TO VERIFY — drought-induced tree mortality literature</em>].
+						Understanding whether and how forests exploit these minor water pathways during stress has
+						direct implications for models of forest vulnerability and resilience, and for silvicultural
+						management strategies under projected future drought regimes.
 					</p>
 				</section>
 
@@ -72,29 +89,28 @@ import Icon from '../components/Icon.astro';
 						<div class="rq-card">
 							<span class="rq-label">RQ1</span>
 							<p>
-								Can a groundwater-coupled VIC Denmark, constrained by joint assimilation of
-								<strong>GRACE FO</strong> terrestrial water storage, <strong>SMAP</strong> and
-								<strong>ESA CCI</strong> soil moisture, streamflow, and Jupiter piezometric heads,
-								reproduce the propagation of meteorological, agricultural, hydrological, and
-								groundwater drought signals better than uncoupled or non-assimilated baselines?
+								To what extent do <strong>foliar water uptake</strong> and <strong>forest floor
+								evaporation</strong> contribute to the total water balance of a forest stand during
+								drought events, and how does the magnitude and timing of these contributions vary
+								across the three experimental sites in Luxembourg, Switzerland, and the Netherlands?
 							</p>
 						</div>
 						<div class="rq-card">
 							<span class="rq-label">RQ2</span>
 							<p>
-								Does a hybrid framework combining differentiable parameter learning with LSTM
-								post-processing trained on <strong>CAMELS DK</strong> recover predictive skill
-								in groundwater-dominated Danish catchments, where pure LSTMs underperform
-								(Liu et al. 2024)?
+								Can <strong>stable isotopic tracers</strong> (δ¹⁸O, δ²H) reliably separate foliar
+								water uptake and forest floor evaporation from the dominant transpiration signal,
+								and what are the methodological limits of the <strong>two water worlds
+								framework</strong> when applied to these minor pathways under drought conditions?
 							</p>
 						</div>
 						<div class="rq-card">
 							<span class="rq-label">RQ3</span>
 							<p>
-								Can a probabilistic four-pillar combined index (SPI/SPEI + SSMI + SSI + SGI),
-								aggregated via copulas, classify drought severity more skilfully than
-								<strong>EDO CDI v4</strong> and improve seasonal predictability when forced with
-								<strong>SEAS5</strong> and <strong>AIFS ENS</strong> or GenCast?
+								How can quantitative estimates of these minor water fluxes be integrated into a
+								<strong>stand-scale ecohydrological model</strong>, and what do the resulting
+								process constraints imply for the simulated resilience of forest water budgets
+								to drought?
 							</p>
 						</div>
 					</div>
@@ -107,60 +123,72 @@ import Icon from '../components/Icon.astro';
 						<div class="wp-item">
 							<div class="wp-header">
 								<span class="wp-badge">WP1</span>
-								<h3>VIC Denmark with Groundwater Coupling</h3>
+								<h3>Field Instrumentation and Multi-site Data Collection</h3>
 							</div>
 							<p>
-								National VIC 5 at 1–10 km, parameterised from VICGlobal and refined with Danish
-								hydrostratigraphy from GEUS and Jupiter wells. The groundwater module follows
-								<strong>SIMGM</strong> (Niu et al. 2007), with a staged escalation path to 2D
-								lateral coupling if validation justifies it.
+								Deployment and maintenance of micrometeorological monitoring stations, isotopic
+								sampling networks (precipitation, throughfall, soil water at multiple depths, xylem
+								water), and sap flow sensors across the three experimental sites. By the end of
+								Year 1 this work package delivers a uniquely comprehensive, harmonised multi-site
+								dataset as a standalone scientific output — publishable as a data or methods paper
+								regardless of downstream modelling outcomes, and providing the observational
+								backbone that all subsequent work packages depend on.
 							</p>
 						</div>
 						<div class="wp-item">
 							<div class="wp-header">
 								<span class="wp-badge">WP2</span>
-								<h3>Joint Calibration and Multi-Source Data Assimilation</h3>
+								<h3>Isotopic Analysis and Water Source Separation</h3>
 							</div>
 							<p>
-								<strong>LETKF</strong> and <strong>ConBay</strong> MCMC assimilating GRACE FO
-								terrestrial water storage (sub-monthly L1B), SMAP and ESA CCI soil moisture,
-								streamflow, and Jupiter piezometric heads. Built on <strong>PyGLDA</strong>
-								(Yang et al. 2025) with Fennoscandian GIA correction via ICE-6G_D.
+								Laboratory analysis of δ¹⁸O and δ²H ratios from field samples, and application of
+								isotopic mixing models implemented in a Bayesian framework to propagate sampling
+								and analytical uncertainty through to source proportion estimates. This work
+								package also evaluates the performance and limitations of the two water worlds
+								framework for distinguishing foliar uptake and forest floor contributions from the
+								dominant transpiration signal.
 							</p>
 						</div>
 						<div class="wp-item">
 							<div class="wp-header">
 								<span class="wp-badge">WP3</span>
-								<h3>Hybrid Extension via Differentiable Hydrology</h3>
+								<h3>Energetic Quantification of Forest Floor Evaporation</h3>
 							</div>
 							<p>
-								Differentiable VIC trained via <strong>dPL</strong> (Tsai et al. 2021) on
-								CAMELS DK across 3,330 basins — replacing per-basin calibration with
-								gradient-based learning. An LSTM residual post-processor corrects biases in
-								groundwater-dominated catchments.
+								Measurement of forest floor evaporation using sub-canopy eddy covariance and
+								Bowen ratio energy balance methods. Cross-validation between the energy balance
+								approach and the isotopic mass balance from WP2 provides methodological
+								redundancy: agreement between the two independent methods validates both;
+								divergence is itself informative about systematic biases in sub-canopy turbulence
+								measurement or isotopic mixing assumptions.
 							</p>
 						</div>
 						<div class="wp-item">
 							<div class="wp-header">
 								<span class="wp-badge">WP4</span>
-								<h3>Probabilistic Four-Pillar Drought Index</h3>
+								<h3>Integration into a Stand-Scale Ecohydrological Model</h3>
 							</div>
 							<p>
-								Standardised sub-indices spanning the full propagation chain —
-								SPI/SPEI · SSMI · SSI · SGI — aggregated via copulas into a probabilistic
-								<strong>Multi-pillar Combined Drought Index (MCDI)</strong> with full posterior
-								probabilities of drought severity categories.
+								Development of process representations of foliar water uptake and forest floor
+								evaporation within a stand-scale ecohydrological modelling framework. The model
+								will be calibrated and evaluated against the multi-site observational dataset from
+								WP1–3, with particular attention to its ability to reproduce observed isotopic
+								signatures and micrometeorological flux partitioning under varying drought
+								intensities.
 							</p>
 						</div>
 						<div class="wp-item">
 							<div class="wp-header">
 								<span class="wp-badge">WP5</span>
-								<h3>Short- to Seasonal-Scale Forecasting</h3>
+								<h3>Inter-site Synthesis and Forest Resilience Implications</h3>
 							</div>
 							<p>
-								VIC DK forced with <strong>SEAS5</strong> and <strong>AIFS ENS</strong> or
-								GenCast for 1–6 month outlooks, evaluated via CRPS, Brier score, and ROC.
-								Benchmarks: EFAS Seasonal and EDgE.
+								Comparative analysis across Luxembourg, Switzerland, and the Netherlands to
+								identify the climate, species composition, and soil factors that govern the
+								relative importance of foliar uptake and forest floor evaporation during drought.
+								Synthesis of implications for forest drought resilience modelling and silvicultural
+								management, including a contribution to the ForFuS interdisciplinary doctoral
+								training programme's cross-disciplinary outputs.
 							</p>
 						</div>
 					</div>
@@ -168,21 +196,22 @@ import Icon from '../components/Icon.astro';
 
 				<!-- TIMELINE -->
 				<section>
-					<h2>4. Project Timeline (36 months)</h2>
+					<h2>4. Project Timeline (48 months)</h2>
 					<div class="timeline-table">
 						<div class="tl-header">
 							<span>Work Package</span>
 							<span class="tl-yr">Year 1</span>
 							<span class="tl-yr">Year 2</span>
 							<span class="tl-yr">Year 3</span>
+							<span class="tl-yr">Year 4</span>
 						</div>
 						{[
-							{ wp: 'WP1: VIC + GW', y1: 100, y2: 30, y3: 0, note: 'Decision point: 2D lateral coupling (month 12)' },
-							{ wp: 'WP2: Data Assimilation', y1: 60, y2: 100, y3: 40, note: 'Runs in parallel throughout' },
-							{ wp: 'WP3: Hybrid ML', y1: 0, y2: 80, y3: 100, note: 'Milestone: hybrid competence (month 24)' },
-							{ wp: 'WP4: MCDI', y1: 0, y2: 60, y3: 100, note: 'Copula aggregation in Year 2–3' },
-							{ wp: 'WP5: Forecasting', y1: 0, y2: 20, y3: 100, note: 'Milestone: operational prototype (month 36)' },
-						].map(({ wp, y1, y2, y3, note }) => (
+							{ wp: 'WP1: Field Data', y1: 100, y2: 50, y3: 20, y4: 0, note: 'Multi-site instrumentation operational by month 6' },
+							{ wp: 'WP2: Isotopic Analysis', y1: 60, y2: 100, y3: 60, y4: 20, note: 'Continuous sampling throughout field campaign' },
+							{ wp: 'WP3: Floor Evap.', y1: 40, y2: 100, y3: 60, y4: 10, note: 'Sub-canopy EC in parallel with WP2' },
+							{ wp: 'WP4: Modelling', y1: 0, y2: 40, y3: 100, y4: 40, note: 'Model development once observational baseline established' },
+							{ wp: 'WP5: Synthesis', y1: 0, y2: 0, y3: 40, y4: 100, note: 'Inter-site synthesis and resilience implications' },
+						].map(({ wp, y1, y2, y3, y4 }) => (
 							<div class="tl-row">
 								<span class="tl-label">{wp}</span>
 								<div class="tl-bar-cell">
@@ -194,6 +223,9 @@ import Icon from '../components/Icon.astro';
 								<div class="tl-bar-cell">
 									<div class="tl-bar" style={`width: ${y3}%`}></div>
 								</div>
+								<div class="tl-bar-cell">
+									<div class="tl-bar" style={`width: ${y4}%`}></div>
+								</div>
 							</div>
 						))}
 					</div>
@@ -204,24 +236,24 @@ import Icon from '../components/Icon.astro';
 					<h2>5. Expected Challenges and Mitigations</h2>
 					<div class="challenge-grid">
 						<div class="challenge-card">
-							<h3>Scale Mismatch</h3>
-							<p class="challenge-desc">GRACE FO ~300 km resolution vs Denmark's 43,000 km²</p>
-							<p>Sub-monthly L1B assimilation · ConBay merging with SMAP · ML-based downscaling against Jupiter wells · GIA correction via ICE-6G_D</p>
+							<h3>Energy Balance Closure</h3>
+							<p class="challenge-desc">Sub-canopy eddy covariance residuals of 10–30% of net radiation can mask the forest floor evaporation signal entirely</p>
+							<p>Cross-validation with the isotopic mass balance from WP2 provides an independent, physically distinct estimate of floor evaporation; convergence between the two methods validates the approach, divergence is itself a scientifically informative result</p>
 						</div>
 						<div class="challenge-card">
-							<h3>Equifinality</h3>
-							<p class="challenge-desc">Multiple parameter sets can reproduce equivalent streamflow with incorrect subsurface partitioning</p>
-							<p>GEUS-derived priors on aquifer parameters · LETKF localisation and inflation · dPL as deterministic precursor before stochastic assimilation</p>
+							<h3>Xylem Water Extraction</h3>
+							<p class="challenge-desc">Cryogenic extraction of xylem water for isotopic analysis may introduce systematic bias from cellulose-bound water contamination</p>
+							<p>Triangulation between cryogenic extraction, direct vapour equilibration, and published isotopic correction procedures; multi-method comparison on a subset of samples to quantify and correct extraction artefacts before bulk analysis</p>
 						</div>
 						<div class="challenge-card">
-							<h3>ML Physical Consistency</h3>
-							<p class="challenge-desc">Pure LSTMs may extrapolate poorly and do not guarantee mass conservation</p>
-							<p>VIC as physical backbone · LSTM restricted to residual post-processor role · Conformal prediction for honest uncertainty intervals</p>
+							<h3>Inter-site Heterogeneity</h3>
+							<p class="challenge-desc">Differences in species composition, soil properties, and regional climate between Luxembourg, Switzerland, and the Netherlands limit direct comparability</p>
+							<p>Standardised field measurement and sample processing protocols across all three sites; hierarchical statistical model treating site identity as a random effect to separate process-level relationships from site-specific intercepts</p>
 						</div>
 						<div class="challenge-card">
-							<h3>Index Collapse</h3>
-							<p class="challenge-desc">Naive averaging of indices with different time scales loses causal propagation and tail dependence</p>
-							<p>Pillar-appropriate scales (SPI 1–3 months, SGI 6–12 months) · Copula aggregation preserving tail dependence · Validation against Naturskaderådet claims and crop yield anomalies</p>
+							<h3>Stand vs. Tree Scale</h3>
+							<p class="challenge-desc">Within-stand variability in foliar water uptake and sap flow rates between trees of different size classes complicates stand-level upscaling</p>
+							<p>Stratified sampling design based on diameter class and dominant species; geostatistical upscaling methods to estimate stand-level fluxes with explicit uncertainty bounds propagated from the tree-level measurements</p>
 						</div>
 					</div>
 				</section>
@@ -230,9 +262,9 @@ import Icon from '../components/Icon.astro';
 				<section>
 					<h2>6. Expected Outputs</h2>
 					<ul class="outputs-list">
-						<li>Three first-author papers in <em>Water Resources Research</em>, <em>Hydrology and Earth System Sciences</em>, and <em>Remote Sensing of Environment</em> or <em>Science of The Total Environment</em></li>
-						<li>An open-source VIC DK + ConBay data assimilation codebase released through PyGLDA</li>
-						<li>An operational MCDI prototype co-designed with DMI, GEUS, and Naturskaderådet end-users</li>
+						<li>First-author papers in peer-reviewed ecohydrology journals, targeting outlets including <em>Hydrology and Earth System Sciences</em>, <em>Agricultural and Forest Meteorology</em>, and <em>Ecohydrology</em></li>
+						<li>An open-access multi-site dataset of stable water isotope ratios (δ¹⁸O, δ²H) and sub-canopy micrometeorological fluxes from the Luxembourg, Switzerland, and Netherlands experimental sites</li>
+						<li>A methodological and scientific contribution to the ForFuS interdisciplinary doctoral training unit's cross-disciplinary programme and its network of partner institutions</li>
 					</ul>
 				</section>
 
@@ -242,20 +274,35 @@ import Icon from '../components/Icon.astro';
 					<p>
 						My M.Sc. thesis at Politecnico di Milano — building, calibrating, and running sensitivity
 						and uncertainty analysis on the FEST process-based hydrological model over the Po basin —
-						gave me direct experience of the central methodological tension this project addresses:
-						constraining subsurface parameters from surface observations alone.
+						gave me direct experience of the methodological tension this PhD addresses from the
+						modelling side: constraining poorly identifiable sub-processes from aggregate or indirect
+						observations. In the Po catchment, the individual contributions of surface runoff,
+						interflow, and deep percolation cannot be measured directly at the spatial and temporal
+						resolution needed for model calibration; they must be inferred from the integrated
+						streamflow signal and from spatial patterns in soil moisture and groundwater levels. The
+						challenge of separating foliar water uptake and forest floor evaporation from a bulk eddy
+						covariance flux is structurally analogous — and the solution strategy (multi-source
+						observations, Bayesian uncertainty propagation, cross-validation between independent
+						methods) is the same.
 					</p>
 					<p>
-						My current operational role at Progesi S.p.A., running multi-hazard monitoring with ICON
-						and ECMWF IFS forcing, satellite-derived diagnostics, and Python/R/MATLAB workflows for
-						Regione Lombardia, translates directly to the operational demands of a national-scale
-						drought early warning system.
+						My current role at Progesi S.p.A. as a Natural Risk Assessment Specialist involves the
+						operational integration of data from heterogeneous sources — numerical weather prediction
+						output from ICON-I2 and ECMWF-IFS, ground-based sensor networks, and satellite-derived
+						products — under real-time constraints and with direct operational consequences.
+						Coordinating a field monitoring network across three international sites, managing sample
+						collection logistics, and quality-controlling multi-source timeseries data are operational
+						demands for which this role has directly prepared me.
 					</p>
 					<p>
-						This combination of process-based modelling, applied data science, and operational
-						hydrometeorology positions me to contribute to WP1 and WP2 immediately, while developing
-						the hybrid ML competence for WP3 through structured upskilling in NeuralHydrology,
-						PyTorch, and differentiable hydrology.
+						Isotope hydrology and ecophysiological instrumentation — xylem water extraction
+						techniques, sub-canopy eddy covariance system configuration, and sap flow measurement
+						methods — are competences I will develop during the doctoral programme under Prof. Keim's
+						supervision at LIST. I do not present them as existing skills. The quantitative
+						contribution I bring to the project from day one is in process-based hydrological
+						modelling, multi-source data integration, and uncertainty-aware calibration: a
+						methodological foundation from which the field-specific techniques of isotope ecohydrology
+						can be systematically acquired.
 					</p>
 				</section>
 
@@ -417,7 +464,7 @@ import Icon from '../components/Icon.astro';
 	.tl-header,
 	.tl-row {
 		display: grid;
-		grid-template-columns: 14rem 1fr 1fr 1fr;
+		grid-template-columns: 14rem 1fr 1fr 1fr 1fr;
 		gap: 0;
 	}
 
@@ -535,7 +582,7 @@ import Icon from '../components/Icon.astro';
 
 		.tl-header,
 		.tl-row {
-			grid-template-columns: 9rem 1fr 1fr 1fr;
+			grid-template-columns: 9rem 1fr 1fr 1fr 1fr;
 		}
 
 		.meta-download {
