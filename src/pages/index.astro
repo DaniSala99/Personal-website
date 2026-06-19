@@ -9,43 +9,47 @@ import PortfolioPreview from '../components/PortfolioPreview.astro';
 import Skills from '../components/Skills.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 
-const projects = (await getCollection('work')).sort((a, b) => a.id.localeCompare(b.id));
+const [about] = await getCollection('about');
+const featuredProjects = (await getCollection('projects')).sort((a, b) => a.id.localeCompare(b.id));
 ---
 
 <BaseLayout
-	title="Daniele Sala | Hydrological Risk Modeler"
-	description="Flood risk modeling, hydrological forecasting and CSRD-aligned physical risk for engineering firms, insurers and municipalities across Europe."
+	title={`${about.data.name} | ${about.data.tagline}`}
+	description={`Personal website of ${about.data.name}. ${about.data.tagline}. Based in ${about.data.location}.`}
 >
 	<div class="stack gap-20 lg:gap-48">
 		<div class="wrapper stack gap-8 lg:gap-20">
 			<header class="hero">
 				<div class="hero-content">
 					<Hero
-						title="Daniele Sala"
-						tagline="Hydrological Risk Modeler · Python · Fortran · GIS"
+						title={about.data.name}
+						tagline={about.data.tagline}
 						align="start"
 					>
-					<p class="hero-cta">
-						I Help Insurers, Utilities &amp; Municipalities Quantify Water-Related Risk Before It
-						Becomes a Crisis
-					</p>
-					<p class="hero-intro">
-						In September 2025, the Seveso and Bevera rivers overflowed across Northern Lombardy. I
-						was on the operational team running the hydrological alerts, post-event impact assessment
-						and institutional reporting that fed directly into Regione Lombardia's emergency
-						declarations. That kind of work, where hydrological models meet real consequences for
-						real cities, is exactly what I do as a freelancer too.
-					</p>
+					<div class="hero-links">
+						<a href="/work/" class="hero-btn primary">
+							View Projects
+							<Icon icon="arrow-right" size="1em" />
+						</a>
+						{about.data.email && (
+							<a href={`mailto:${about.data.email}`} class="hero-btn secondary">
+								Get in Touch
+								<Icon icon="paper-plane-tilt" size="1em" />
+							</a>
+						)}
+					</div>
 					</Hero>
 				</div>
-				<div class="hero-portrait">
-					<img
-						src="/assets/dani.png"
-						alt="Portrait of Daniele Sala"
-						width="600"
-						height="750"
-					/>
-				</div>
+				{about.data.avatar && (
+					<div class="hero-portrait">
+						<img
+							src={about.data.avatar}
+							alt={`Portrait of ${about.data.name}`}
+							width="600"
+							height="750"
+						/>
+					</div>
+				)}
 			</header>
 
 			<Skills />
@@ -54,17 +58,16 @@ const projects = (await getCollection('work')).sort((a, b) => a.id.localeCompare
 		<main class="wrapper stack gap-20 lg:gap-48">
 			<section class="section with-background with-cta">
 				<header class="section-header stack gap-2 lg:gap-4">
-					<h3>Case Studies</h3>
+					<h3>Projects</h3>
 					<p>
-						Flood risk, hydrological modeling, climate analytics, applied to real catchments and
-						real clients.
+						Research and professional case studies in hydrology, climate risk and environmental engineering.
 					</p>
 				</header>
 
 				<div class="gallery">
 					<Grid variant="offset">
 						{
-							projects.map((project) => (
+							featuredProjects.map((project) => (
 								<li>
 									<PortfolioPreview project={project} />
 								</li>
@@ -75,7 +78,7 @@ const projects = (await getCollection('work')).sort((a, b) => a.id.localeCompare
 
 				<div class="cta">
 					<CallToAction href="/work/">
-						All Case Studies
+						All Projects
 						<Icon icon="arrow-right" size="1.2em" />
 					</CallToAction>
 				</div>
@@ -112,22 +115,45 @@ const projects = (await getCollection('work')).sort((a, b) => a.id.localeCompare
 		aspect-ratio: 4 / 5;
 	}
 
-	.hero-cta {
-		margin-top: 1rem;
-		font-size: var(--text-lg);
-		font-family: var(--font-brand);
-		font-weight: 600;
-		color: var(--accent-regular);
-		max-width: 45ch;
-		line-height: 1.3;
+	.hero-links {
+		margin-top: 1.5rem;
+		display: flex;
+		gap: 0.75rem;
+		flex-wrap: wrap;
 	}
 
-	.hero-intro {
-		margin-top: 1rem;
+	.hero-btn {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.4em;
+		padding: 0.55em 1.4em;
+		border-radius: 999rem;
 		font-size: var(--text-md);
-		color: var(--gray-300);
-		max-width: 55ch;
-		line-height: 1.7;
+		font-family: var(--font-brand);
+		font-weight: 500;
+		text-decoration: none;
+		transition: box-shadow var(--theme-transition), opacity var(--theme-transition);
+	}
+
+	.hero-btn.primary {
+		background: var(--gradient-accent-orange);
+		color: var(--accent-text-over);
+		box-shadow: var(--shadow-md);
+	}
+
+	.hero-btn.primary:hover {
+		opacity: 0.9;
+	}
+
+	.hero-btn.secondary {
+		border: 1px solid var(--gray-700);
+		color: var(--gray-200);
+		background: var(--gray-999_40);
+	}
+
+	.hero-btn.secondary:hover {
+		border-color: var(--accent-regular);
+		color: var(--accent-regular);
 	}
 
 	/* ====================================================== */

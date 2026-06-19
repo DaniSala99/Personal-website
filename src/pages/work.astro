@@ -6,23 +6,23 @@ import Hero from '../components/Hero.astro';
 import PortfolioPreview from '../components/PortfolioPreview.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 
-const projects = (await getCollection('work')).sort((a, b) => a.id.localeCompare(b.id));
+const allProjects = (await getCollection('projects')).sort((a, b) => a.id.localeCompare(b.id));
 ---
 
 <BaseLayout
-	title="Case Studies | Daniele Sala"
-	description="End-to-end hydrological and climate risk case studies: Po River, Olona flood protection, paleoclimate statistics, Red River reservoir optimization."
+	title="Projects"
+	description="Research and professional case studies in hydrology, flood risk modeling and climate risk analytics."
 >
 	<div class="stack gap-20">
 		<main class="wrapper stack gap-8">
 			<Hero
-				title="Case Studies"
-				tagline="Four projects spanning flood risk, hydrological modeling, statistical climate analysis and multi-objective reservoir optimization."
+				title="Projects"
+				tagline="Research and professional case studies spanning hydrology, flood risk modeling, climate analytics and multi-objective optimization."
 				align="start"
 			/>
 			<Grid variant="offset">
 				{
-					projects.map((project) => (
+					allProjects.map((project) => (
 						<li>
 							<PortfolioPreview project={project} />
 						</li>
