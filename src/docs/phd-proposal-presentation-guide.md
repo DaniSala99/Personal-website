@@ -1,5 +1,6 @@
 # Guide to Presenting the PhD Research Proposal Page
 
+
 This document is a practical reading and presentation guide for the `/phd-proposal/` page on the site. It explains what each section contains, why it is structured that way, and how to walk a supervisor or selection committee through it during a PhD interview or informal meeting.
 
 ---

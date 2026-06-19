@@ -2,303 +2,374 @@
 import ContactCTA from '../components/ContactCTA.astro';
 import Hero from '../components/Hero.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
+
+const skills = {
+	'Modelling & computing': ['Python', 'R', 'MATLAB', 'Fortran', 'SQL', 'QGIS'],
+	'Hydrological tools': ['FEST', 'HEC-RAS', 'ICON / ECMWF-IFS', 'Remote Sensing', 'UAV / drone imagery'],
+	'Languages': ['Italian (Native)', 'English (C1)', 'Spanish (B2)'],
+};
 ---
 
 <BaseLayout
-	title="PhD Research Proposal | Daniele Sala"
-	description="PhD project plan: Forest-Water Relations During Drought. Isotopic and micrometeorological quantification of minor water pathways in stand-scale forest water budgets. ForFuS Doctoral Training Unit, Luxembourg Institute of Science and Technology."
+	title="Daniele Sala | Interview Presentation"
+	description="PhD interview presentation for ForFuS / LIST. Background, education, professional experience, and relevant academic work in process-based hydrological modelling and statistical time-series analysis."
 >
 	<div class="stack gap-20">
 		<main class="wrapper stack gap-10">
 			<Hero
-				title="PhD Research Proposal"
-				tagline="Forest-Water Relations During Drought: Isotopic and Micrometeorological Quantification of Minor Water Pathways in Stand-Scale Forest Water Budgets"
+				title="Daniele Sala"
+				tagline="Environmental Engineer · Process-Based Hydrological Modelling · Multi-Source Data Integration"
 				align="start"
 			/>
 
-			<div class="meta-bar">
-				<span class="meta-item"><strong>Programme:</strong> ForFuS Doctoral Training Unit · LIST (Luxembourg)</span>
-				<span class="meta-item"><strong>Duration:</strong> 48 months</span>
-				<span class="meta-item"><strong>Date:</strong> June 2026</span>
-			</div>
+			<div class="page-content">
 
-			<div class="proposal-content">
+				<!-- ── SECTION 1: ABOUT ME ── -->
+				<section class="page-section">
+					<h2 class="section-heading">About Me</h2>
 
-				<!-- ABSTRACT -->
-				<section class="abstract-box">
-					<p>
-						Forest water budgets are poorly constrained at the process level during drought: current
-						evapotranspiration partitioning frameworks assign the dominant flux to canopy transpiration
-						and leave forest floor evaporation as a residual absorbed by measurement error, while foliar
-						water uptake (the direct absorption of water through leaf surfaces during fog, dew, or
-						wetting events) remains essentially absent from operational models. This PhD will quantify
-						these under-constrained water pathways using stable isotopic tracers (δ¹⁸O, δ²H) and
-						sub-canopy micrometeorological monitoring across experimental forest stands in Luxembourg,
-						Switzerland, and the Netherlands, and integrate the resulting process understanding into a
-						stand-scale ecohydrological modelling framework within the ForFuS interdisciplinary doctoral
-						training unit at the Luxembourg Institute of Science and Technology (LIST).
-					</p>
-				</section>
+					<!-- Education -->
+					<div class="subsection">
+						<h3 class="subsection-heading">Education</h3>
+						<div class="timeline">
 
-				<!-- PROBLEM STATEMENT -->
-				<section>
-					<h2>1. Problem Statement and Motivation</h2>
-					<p>
-						The dominant evapotranspiration partitioning frameworks used in forest hydrology,
-						<strong>Penman-Monteith</strong> and <strong>Shuttleworth-Wallace</strong>, rest on the
-						assumption that canopy transpiration accounts for the majority of the forest water flux.
-						Forest floor evaporation, the evaporation from litter, moss, and bare soil beneath the
-						canopy, is routinely treated as a minor residual. In practice, stand-level eddy covariance
-						datasets frequently exhibit energy balance non-closure on the order of 10–30% of net
-						radiation, and forest floor evaporation is precisely the term most likely to be subsumed
-						into this residual error. The result is that one of the pathways most sensitive to
-						drought-induced canopy thinning and understorey change is also the least well constrained
-						observationally.
-					</p>
-					<p>
-						Foliar water uptake (direct leaf-surface absorption during fog, dew, or rain-on-drought
-						events) adds a further dimension that existing measurement frameworks cannot resolve
-						independently. During severe water stress, when soil water potential drops below a critical
-						threshold, the hydraulic gradient along the soil-plant-atmosphere continuum can reverse at
-						the leaf-atmosphere interface, making the canopy a transient net water importer. Neither
-						<strong>sap flow sensors</strong> (which measure xylem water flux, not foliar absorption)
-						nor <strong>above-canopy eddy covariance</strong> (which integrates over the entire
-						canopy-atmosphere interface) can isolate this pathway in isolation. Stable water isotopes
-						offer a tracer-based route around this measurement barrier, but their application to
-						distinguishing foliar uptake from transpiration remains methodologically contested.
-					</p>
-					<p>
-						The frequency and severity of drought events in central Europe has increased markedly in
-						recent decades, with documented consequences for forest water status and mortality risk
-						[<em>CITATION TO VERIFY: drought-induced tree mortality literature</em>].
-						Understanding whether and how forests exploit these minor water pathways during stress has
-						direct implications for models of forest vulnerability and resilience, and for silvicultural
-						management strategies under projected future drought regimes.
-					</p>
-				</section>
+							<div class="tl-item">
+								<div class="tl-dot"></div>
+								<div class="tl-body">
+									<div class="tl-row">
+										<span class="tl-degree">M.Sc. Environmental and Land Planning Engineering</span>
+										<span class="tl-grade">106 / 110</span>
+									</div>
+									<p class="tl-inst">Politecnico di Milano · 2021–2024</p>
+									<p class="tl-desc">
+										Weighted average 27.31 / 30. Relevant coursework: Hydrogeological Risk (30/30) ·
+										Remote Sensing (30/30) · Statistical Models and Stochastic Processes (29/30) ·
+										Ecosystems Conservation and Management (29/30).
+									</p>
+								</div>
+							</div>
 
-				<!-- RESEARCH QUESTIONS -->
-				<section>
-					<h2>2. Research Questions</h2>
-					<div class="rq-grid">
-						<div class="rq-card">
-							<span class="rq-label">RQ1</span>
-							<p>
-								To what extent do <strong>foliar water uptake</strong> and <strong>forest floor
-								evaporation</strong> contribute to the total water balance of a forest stand during
-								drought events, and how does the magnitude and timing of these contributions vary
-								across the three experimental sites in Luxembourg, Switzerland, and the Netherlands?
-							</p>
+							<div class="tl-item">
+								<div class="tl-dot"></div>
+								<div class="tl-body">
+									<div class="tl-row">
+										<span class="tl-degree">Erasmus Exchange Semester</span>
+									</div>
+									<p class="tl-inst">Universitat Politècnica de València (UPV), Spain · 2022–2023</p>
+									<p class="tl-desc">
+										Specialisation in Water Quality, Pollution Transport in Natural Environments, and
+										Wastewater Treatment Management.
+									</p>
+								</div>
+							</div>
+
+							<div class="tl-item">
+								<div class="tl-dot"></div>
+								<div class="tl-body">
+									<div class="tl-row">
+										<span class="tl-degree">B.Sc. Environmental Engineering</span>
+									</div>
+									<p class="tl-inst">Politecnico di Milano · 2018–2021</p>
+									<p class="tl-desc">
+										Foundation in environmental engineering, fluid mechanics, hydrology, and environmental
+										systems.
+									</p>
+								</div>
+							</div>
+
 						</div>
-						<div class="rq-card">
-							<span class="rq-label">RQ2</span>
-							<p>
-								Can <strong>stable isotopic tracers</strong> (δ¹⁸O, δ²H) reliably separate foliar
-								water uptake and forest floor evaporation from the dominant transpiration signal,
-								and what are the methodological limits of the <strong>two water worlds
-								framework</strong> when applied to these minor pathways under drought conditions?
-							</p>
+					</div>
+
+					<!-- Professional Experience -->
+					<div class="subsection">
+						<h3 class="subsection-heading">Professional Experience</h3>
+						<div class="exp-list">
+
+							<div class="exp-item">
+								<div class="exp-header">
+									<div class="exp-title-block">
+										<span class="exp-role">Natural Risk Assessment Specialist</span>
+										<span class="exp-company">Progesi S.p.A. · Milan</span>
+									</div>
+									<span class="exp-period">2025 – Present</span>
+								</div>
+								<ul class="exp-bullets">
+									<li>
+										Develop and maintain integrated environmental monitoring systems processing
+										multi-source data from ground stations, satellite platforms, and NWP models
+										(ICON-I2, ECMWF-IFS) for regional-scale natural hazard management and risk
+										quantification.
+									</li>
+									<li>
+										Calibrate regional hydrological forecasting against ground-station and satellite
+										observations over the Po Plain and Alpine foothills; collaborate with university
+										research groups and PhD teams on applied hydrometeorological and climate modelling
+										projects.
+									</li>
+									<li>
+										<strong>September 2025 — Seveso &amp; Bevera flood event:</strong> led
+										end-to-end flood risk management from hydrological alerting and real-time
+										monitoring to post-event impact assessment and institutional reporting, supporting
+										Regione Lombardia in emergency state declarations and damage compensation claims.
+									</li>
+								</ul>
+							</div>
+
+							<div class="exp-item">
+								<div class="exp-header">
+									<div class="exp-title-block">
+										<span class="exp-role">Climate Data Analyst</span>
+										<span class="exp-company">Enel S.p.A. · Milan</span>
+									</div>
+									<span class="exp-period">2024</span>
+								</div>
+								<ul class="exp-bullets">
+									<li>
+										Analysed climate datasets to assess physical and transition risks for a global
+										energy infrastructure portfolio; developed Python and R automation for climate data
+										ingestion and CSRD / ESRS E1 sustainability benchmarking.
+									</li>
+								</ul>
+							</div>
+
 						</div>
-						<div class="rq-card">
-							<span class="rq-label">RQ3</span>
-							<p>
-								How can quantitative estimates of these minor water fluxes be integrated into a
-								<strong>stand-scale ecohydrological model</strong>, and what do the resulting
-								process constraints imply for the simulated resilience of forest water budgets
-								to drought?
-							</p>
+					</div>
+
+					<!-- Skills -->
+					<div class="subsection">
+						<h3 class="subsection-heading">Technical Skills &amp; Languages</h3>
+						<div class="skills-grid">
+							{Object.entries(skills).map(([label, tags]) => (
+								<div class="skill-group">
+									<span class="skill-label">{label}</span>
+									<div class="skill-tags">
+										{tags.map(t => <span class="tag">{t}</span>)}
+									</div>
+								</div>
+							))}
+						</div>
+					</div>
+
+					<!-- References -->
+					<div class="subsection">
+						<h3 class="subsection-heading">Academic References</h3>
+						<div class="refs-grid">
+							<div class="ref-card">
+								<p class="ref-name">Prof. Giovanni Ravazzani</p>
+								<p class="ref-role">Thesis Supervisor · DICA, Politecnico di Milano</p>
+								<a href="mailto:giovanni.ravazzani@polimi.it">giovanni.ravazzani@polimi.it</a>
+							</div>
+							<div class="ref-card">
+								<p class="ref-name">Prof. Marco Gianinetto</p>
+								<p class="ref-role">Remote Sensing · DICA, Politecnico di Milano</p>
+								<a href="mailto:marco.gianinetto@polimi.it">marco.gianinetto@polimi.it</a>
+							</div>
+							<div class="ref-card">
+								<p class="ref-name">Prof. Ilenia Epifani</p>
+								<p class="ref-role">Statistical Models &amp; Stochastic Processes · DMAT, Politecnico di Milano</p>
+								<a href="mailto:ilenia.epifani@polimi.it">ilenia.epifani@polimi.it</a>
+							</div>
 						</div>
 					</div>
 				</section>
 
-				<!-- WORK PACKAGES -->
-				<section>
-					<h2>3. Work Packages</h2>
-					<div class="wp-list">
-						<div class="wp-item">
-							<div class="wp-header">
-								<span class="wp-badge">WP1</span>
-								<h3>Field Instrumentation and Multi-site Data Collection</h3>
-							</div>
-							<p>
-								Deployment and maintenance of micrometeorological monitoring stations, isotopic
-								sampling networks (precipitation, throughfall, soil water at multiple depths, xylem
-								water), and sap flow sensors across the three experimental sites. By the end of
-								Year 1 this work package delivers a uniquely comprehensive, harmonised multi-site
-								dataset as a standalone scientific output, publishable as a data or methods paper
-								regardless of downstream modelling outcomes, and providing the observational
-								backbone that all subsequent work packages depend on.
+				<!-- ── SECTION 2: RELEVANT ACADEMIC WORK ── -->
+				<section class="page-section">
+					<h2 class="section-heading">Relevant Academic Work</h2>
+
+					<!-- FEATURED PROJECT: 11 time series -->
+					<div class="featured-project">
+
+						<div class="fp-header">
+							<span class="fp-badge">Featured project</span>
+							<h3 class="fp-title">
+								Statistical Validation of 11 Paleoclimate Time Series
+							</h3>
+							<p class="fp-subtitle">
+								Identifying Climate Epochs Across 2,500 Years of European Temperature Reconstructions
 							</p>
+							<div class="fp-meta">
+								<span>Politecnico di Milano · Statistical Models and Stochastic Processes · 2023</span>
+								<span>R · Bland-Altman · Segmented regression · Shapiro-Wilk · Paired t-test</span>
+							</div>
 						</div>
-						<div class="wp-item">
-							<div class="wp-header">
-								<span class="wp-badge">WP2</span>
-								<h3>Isotopic Analysis and Water Source Separation</h3>
+
+						<p class="fp-overview">
+							Eleven published paleoclimate reconstructions of European temperatures, spanning 500 BC to 2018 AD
+							and built on four independent proxy families — tree-ring dendrochronology, Grape Harvest Dates,
+							lake sediment chironomids, and historical/documentary indices — were assembled into a single
+							validated multi-method dataset. The central question was whether these methods agree on the timing
+							and magnitude of known climate epochs, and where they systematically diverge.
+						</p>
+
+						<img
+							src="/portfolio/img/03-statistical/01_timeseries_overview.png"
+							alt="Overview of all 11 paleoclimate reconstruction time series"
+							class="fp-img-full"
+						/>
+
+						<div class="steps-block">
+							<h4 class="steps-heading">Analytical Pipeline</h4>
+							<div class="steps-grid">
+								<div class="step">
+									<span class="step-num">1</span>
+									<div class="step-body">
+										<strong>Dataset assembly and pre-processing</strong>
+										<p>
+											Standardised all 11 series to a common reference period; applied outlier removal
+											to isolate climate signal from local noise; addressed non-uniform temporal
+											coverage and missing data patterns across proxy families spanning 2,500 years.
+										</p>
+									</div>
+								</div>
+								<div class="step">
+									<span class="step-num">2</span>
+									<div class="step-body">
+										<strong>Pairwise comparison — Bland-Altman analysis</strong>
+										<p>
+											Quantified systematic bias and limits of agreement between every pair of
+											reconstruction methods. Normality of pairwise differences verified with
+											Shapiro-Wilk tests (p &gt; 0.5 across all pairs) before running paired t-tests.
+										</p>
+									</div>
+								</div>
+								<div class="step">
+									<span class="step-num">3</span>
+									<div class="step-body">
+										<strong>Regime-change / climate epoch detection</strong>
+										<p>
+											Fitted segmented linear regression with automatic breakpoint detection on each
+											series to test whether all methods captured the same climate epochs: the Little
+											Ice Age (1645–1715 and 1816–1850) and the Medieval Warm Period.
+										</p>
+									</div>
+								</div>
+								<div class="step">
+									<span class="step-num">4</span>
+									<div class="step-body">
+										<strong>Cross-proxy reconciliation</strong>
+										<p>
+											Identified which proxy families agreed and explained divergences
+											mechanistically — dendrochronology underestimates cold extremes relative to
+											hemispheric reconstructions (Mann et al. 1999), a non-trivial finding for any
+											user combining the two proxy families in downstream analysis.
+										</p>
+									</div>
+								</div>
 							</div>
-							<p>
-								Laboratory analysis of δ¹⁸O and δ²H ratios from field samples, and application of
-								isotopic mixing models implemented in a Bayesian framework to propagate sampling
-								and analytical uncertainty through to source proportion estimates. This work
-								package also evaluates the performance and limitations of the two water worlds
-								framework for distinguishing foliar uptake and forest floor contributions from the
-								dominant transpiration signal.
-							</p>
 						</div>
-						<div class="wp-item">
-							<div class="wp-header">
-								<span class="wp-badge">WP3</span>
-								<h3>Energetic Quantification of Forest Floor Evaporation</h3>
+
+						<div class="results-row">
+							<div class="result-block">
+								<img
+									src="/portfolio/img/03-statistical/02_bland_altman.jpg"
+									alt="Bland-Altman pairwise bias analysis between reconstruction methods"
+									class="result-img"
+								/>
+								<p class="img-caption">Bland-Altman pairwise bias matrix across reconstruction methods</p>
 							</div>
-							<p>
-								Measurement of forest floor evaporation using sub-canopy eddy covariance and
-								Bowen ratio energy balance methods. Cross-validation between the energy balance
-								approach and the isotopic mass balance from WP2 provides methodological
-								redundancy: agreement between the two independent methods validates both;
-								divergence is itself informative about systematic biases in sub-canopy turbulence
-								measurement or isotopic mixing assumptions.
-							</p>
+							<div class="result-block">
+								<img
+									src="/portfolio/img/03-statistical/03_regime_change.png"
+									alt="Regime change detection via segmented linear regression"
+									class="result-img"
+								/>
+								<p class="img-caption">Segmented regression breakpoint detection on four representative methods</p>
+							</div>
 						</div>
-						<div class="wp-item">
-							<div class="wp-header">
-								<span class="wp-badge">WP4</span>
-								<h3>Integration into a Stand-Scale Ecohydrological Model</h3>
-							</div>
-							<p>
-								Development of process representations of foliar water uptake and forest floor
-								evaporation within a stand-scale ecohydrological modelling framework. The model
-								will be calibrated and evaluated against the multi-site observational dataset from
-								WP1–3, with particular attention to its ability to reproduce observed isotopic
-								signatures and micrometeorological flux partitioning under varying drought
-								intensities.
-							</p>
-						</div>
-						<div class="wp-item">
-							<div class="wp-header">
-								<span class="wp-badge">WP5</span>
-								<h3>Inter-site Synthesis and Forest Resilience Implications</h3>
-							</div>
-							<p>
-								Comparative analysis across Luxembourg, Switzerland, and the Netherlands to
-								identify the climate, species composition, and soil factors that govern the
-								relative importance of foliar uptake and forest floor evaporation during drought.
-								Synthesis of implications for forest drought resilience modelling and silvicultural
-								management, including a contribution to the ForFuS interdisciplinary doctoral
-								training programme's cross-disciplinary outputs.
-							</p>
+
+						<div class="findings-box">
+							<h4 class="findings-heading">Key Findings</h4>
+							<ul class="findings-list">
+								<li>
+									Dendrochronology methods systematically underestimate cold extremes compared to
+									hemispheric reconstructions — a bias that propagates into any downstream analysis
+									that mixes the two proxy families without correction.
+								</li>
+								<li>
+									Only 1 of 4 tested methods captured both Little Ice Age sub-periods (1645–1715 and
+									1816–1850); chironomid-based methods detect the broad regime shift but miss the
+									sharper 1816–1850 sub-event.
+								</li>
+								<li>
+									Shapiro-Wilk p-values consistently above 0.5 confirmed normality of pairwise
+									differences, validating the use of parametric tests across the full comparison matrix.
+								</li>
+								<li>
+									Produced a reproducible R workflow — standardisation → Bland-Altman →
+									breakpoint detection → synthesis — directly applicable to any multi-source
+									environmental time series, including NWP ensemble comparison or multi-station
+									hydrometric datasets.
+								</li>
+							</ul>
 						</div>
 					</div>
-				</section>
 
-				<!-- TIMELINE -->
-				<section>
-					<h2>4. Project Timeline (48 months)</h2>
-					<div class="timeline-table">
-						<div class="tl-header">
-							<span>Work Package</span>
-							<span class="tl-yr">Year 1</span>
-							<span class="tl-yr">Year 2</span>
-							<span class="tl-yr">Year 3</span>
-							<span class="tl-yr">Year 4</span>
+					<!-- SECONDARY PROJECT: Po River Thesis -->
+					<div class="secondary-project">
+
+						<div class="sp-header">
+							<span class="sp-badge">M.Sc. Thesis</span>
+							<h3 class="sp-title">
+								Impact of Agricultural Irrigation on the Hydrologic Regime of the Po River Basin
+							</h3>
+							<p class="sp-meta">
+								Politecnico di Milano · Supervisor: Prof. Giovanni Ravazzani · 2024 ·
+								FEST (Fortran) · Python · R · QGIS · MERIDA reanalysis
+							</p>
 						</div>
-						{[
-							{ wp: 'WP1: Field Data', y1: 100, y2: 50, y3: 20, y4: 0, note: 'Multi-site instrumentation operational by month 6' },
-							{ wp: 'WP2: Isotopic Analysis', y1: 60, y2: 100, y3: 60, y4: 20, note: 'Continuous sampling throughout field campaign' },
-							{ wp: 'WP3: Floor Evap.', y1: 40, y2: 100, y3: 60, y4: 10, note: 'Sub-canopy EC in parallel with WP2' },
-							{ wp: 'WP4: Modelling', y1: 0, y2: 40, y3: 100, y4: 40, note: 'Model development once observational baseline established' },
-							{ wp: 'WP5: Synthesis', y1: 0, y2: 0, y3: 40, y4: 100, note: 'Inter-site synthesis and resilience implications' },
-						].map(({ wp, y1, y2, y3, y4 }) => (
-							<div class="tl-row">
-								<span class="tl-label">{wp}</span>
-								<div class="tl-bar-cell">
-									<div class="tl-bar" style={`width: ${y1}%`}></div>
-								</div>
-								<div class="tl-bar-cell">
-									<div class="tl-bar" style={`width: ${y2}%`}></div>
-								</div>
-								<div class="tl-bar-cell">
-									<div class="tl-bar" style={`width: ${y3}%`}></div>
-								</div>
-								<div class="tl-bar-cell">
-									<div class="tl-bar" style={`width: ${y4}%`}></div>
-								</div>
+
+						<div class="sp-body">
+							<div class="sp-text">
+								<p>
+									Built and calibrated the <strong>FEST process-based hydrological model</strong> across
+									the Po River Basin, integrating 10 years of spatially distributed meteorological,
+									hydrological, and land-use data. Conducted a structured sensitivity and uncertainty
+									analysis across five parameter families (deep percolation factor, SCS Curve Number,
+									hydraulic conductivity, river-aquifer interaction coefficients, channel routing), then
+									designed a counterfactual "no-irrigation" scenario to isolate the irrigation signal
+									from natural climatic variability.
+								</p>
+								<p>
+									The central methodological challenge — inferring the individual contributions of
+									surface runoff, interflow, and deep percolation from aggregate streamflow observations —
+									is structurally analogous to the isotopic water-source separation problem: in both
+									cases, multiple sub-processes must be disentangled from an integrated signal using
+									multi-source observations and uncertainty-aware calibration.
+								</p>
+								<ul class="sp-results">
+									<li>
+										Irrigation reduces cumulative river volumes by <strong>15% during the
+										irrigation season</strong> (April–September), with measurable amplification of
+										summer low-flow stress.
+									</li>
+									<li>
+										Validated across 6 Po mainstem stations: mean NSE 0.58, mean NRMSE 0.50,
+										∆% on cumulative volume between 1% and 11%, stable between calibration and
+										validation periods.
+									</li>
+									<li>
+										Sensitivity analysis identified deep percolation factor and SCS Curve Number as
+										dominant discharge controls; hydraulic conductivity governs aquifer dynamics —
+										a non-obvious result relevant to parameter prioritisation in future calibration.
+									</li>
+								</ul>
 							</div>
-						))}
+							<div class="sp-imgs">
+								<img
+									src="/portfolio/img/01-po/01_po_basin_map.png"
+									alt="Po basin sub-catchments and measurement stations"
+									class="sp-img"
+								/>
+								<img
+									src="/portfolio/img/01-po/03_sensitivity_tornado.png"
+									alt="Tornado sensitivity diagram for FEST model parameters"
+									class="sp-img"
+								/>
+							</div>
+						</div>
+
 					</div>
-				</section>
-
-				<!-- CHALLENGES -->
-				<section>
-					<h2>5. Expected Challenges and Mitigations</h2>
-					<div class="challenge-grid">
-						<div class="challenge-card">
-							<h3>Energy Balance Closure</h3>
-							<p class="challenge-desc">Sub-canopy eddy covariance residuals of 10–30% of net radiation can mask the forest floor evaporation signal entirely</p>
-							<p>Cross-validation with the isotopic mass balance from WP2 provides an independent, physically distinct estimate of floor evaporation; convergence between the two methods validates the approach, divergence is itself a scientifically informative result</p>
-						</div>
-						<div class="challenge-card">
-							<h3>Xylem Water Extraction</h3>
-							<p class="challenge-desc">Cryogenic extraction of xylem water for isotopic analysis may introduce systematic bias from cellulose-bound water contamination</p>
-							<p>Triangulation between cryogenic extraction, direct vapour equilibration, and published isotopic correction procedures; multi-method comparison on a subset of samples to quantify and correct extraction artefacts before bulk analysis</p>
-						</div>
-						<div class="challenge-card">
-							<h3>Inter-site Heterogeneity</h3>
-							<p class="challenge-desc">Differences in species composition, soil properties, and regional climate between Luxembourg, Switzerland, and the Netherlands limit direct comparability</p>
-							<p>Standardised field measurement and sample processing protocols across all three sites; hierarchical statistical model treating site identity as a random effect to separate process-level relationships from site-specific intercepts</p>
-						</div>
-						<div class="challenge-card">
-							<h3>Stand vs. Tree Scale</h3>
-							<p class="challenge-desc">Within-stand variability in foliar water uptake and sap flow rates between trees of different size classes complicates stand-level upscaling</p>
-							<p>Stratified sampling design based on diameter class and dominant species; geostatistical upscaling methods to estimate stand-level fluxes with explicit uncertainty bounds propagated from the tree-level measurements</p>
-						</div>
-					</div>
-				</section>
-
-				<!-- EXPECTED OUTPUTS -->
-				<section>
-					<h2>6. Expected Outputs</h2>
-					<ul class="outputs-list">
-						<li>First-author papers in peer-reviewed ecohydrology journals, targeting outlets including <em>Hydrology and Earth System Sciences</em>, <em>Agricultural and Forest Meteorology</em>, and <em>Ecohydrology</em></li>
-						<li>An open-access multi-site dataset of stable water isotope ratios (δ¹⁸O, δ²H) and sub-canopy micrometeorological fluxes from the Luxembourg, Switzerland, and Netherlands experimental sites</li>
-						<li>A methodological and scientific contribution to the ForFuS interdisciplinary doctoral training unit's cross-disciplinary programme and its network of partner institutions</li>
-					</ul>
-				</section>
-
-				<!-- BACKGROUND -->
-				<section>
-					<h2>7. Background and Added Value</h2>
-					<p>
-						My M.Sc. thesis at Politecnico di Milano (building, calibrating, and running sensitivity
-						and uncertainty analysis on the FEST process-based hydrological model over the Po basin)
-						gave me direct experience of the methodological tension this PhD addresses from the
-						modelling side: constraining poorly identifiable sub-processes from aggregate or indirect
-						observations. In the Po catchment, the individual contributions of surface runoff,
-						interflow, and deep percolation cannot be measured directly at the spatial and temporal
-						resolution needed for model calibration; they must be inferred from the integrated
-						streamflow signal and from spatial patterns in soil moisture and groundwater levels. The
-						challenge of separating foliar water uptake and forest floor evaporation from a bulk eddy
-						covariance flux is structurally analogous; the solution strategy (multi-source
-						observations, Bayesian uncertainty propagation, cross-validation between independent
-						methods) is the same.
-					</p>
-					<p>
-						My current role at Progesi S.p.A. as a Natural Risk Assessment Specialist involves the
-						operational integration of data from heterogeneous sources (numerical weather prediction
-						output from ICON-I2 and ECMWF-IFS, ground-based sensor networks, and satellite-derived
-						products) under real-time constraints and with direct operational consequences.
-						Coordinating a field monitoring network across three international sites, managing sample
-						collection logistics, and quality-controlling multi-source timeseries data are operational
-						demands for which this role has directly prepared me.
-					</p>
-					<p>
-						Isotope hydrology and ecophysiological instrumentation (xylem water extraction
-						techniques, sub-canopy eddy covariance system configuration, and sap flow measurement
-						methods) are competences I will develop during the doctoral programme under Prof. Keim's
-						supervision at LIST. I do not present them as existing skills. The quantitative
-						contribution I bring to the project from day one is in process-based hydrological
-						modelling, multi-source data integration, and uncertainty-aware calibration: a
-						methodological foundation from which the field-specific techniques of isotope ecohydrology
-						can be systematically acquired.
-					</p>
 				</section>
 
 			</div>
@@ -309,272 +380,546 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 </BaseLayout>
 
 <style>
-	.meta-bar {
-		display: flex;
-		flex-wrap: wrap;
-		gap: 1rem 2rem;
-		align-items: center;
-		padding: 1rem 1.5rem;
-		background: var(--gray-999_40);
-		border: 1px solid var(--gray-800);
-		border-radius: 0.75rem;
-		font-size: var(--text-sm);
-		color: var(--gray-300);
-	}
-
-	.meta-download {
-		display: inline-flex;
-		align-items: center;
-		gap: 0.3em;
-		color: var(--accent-regular);
-		text-decoration: none;
-		font-weight: 500;
-		margin-left: auto;
-	}
-
-	.meta-download:hover {
-		text-decoration: underline;
-	}
-
-	.proposal-content {
+	/* ── Layout ── */
+	.page-content {
 		display: flex;
 		flex-direction: column;
-		gap: 3rem;
+		gap: 4rem;
 	}
 
-	.proposal-content section h2 {
-		font-size: var(--text-2xl);
+	.page-section {
+		display: flex;
+		flex-direction: column;
+		gap: 2.5rem;
+	}
+
+	.section-heading {
+		font-size: var(--text-3xl);
 		color: var(--gray-0);
-		margin-bottom: 1.25rem;
 		padding-bottom: 0.5rem;
 		border-bottom: 2px solid var(--accent-regular);
 	}
 
-	.proposal-content section p {
-		color: var(--gray-200);
-		line-height: 1.75;
-		margin-bottom: 0.75rem;
-	}
-
-	/* Abstract */
-	.abstract-box {
-		padding: 1.5rem 2rem;
-		background: var(--accent-overlay);
-		border-left: 4px solid var(--accent-regular);
-		border-radius: 0 0.5rem 0.5rem 0;
-	}
-
-	.abstract-box p {
-		font-size: var(--text-lg);
-		font-style: italic;
-		color: var(--gray-100) !important;
-		margin: 0 !important;
-	}
-
-	/* Research questions */
-	.rq-grid {
-		display: grid;
-		gap: 1rem;
-	}
-
-	.rq-card {
-		display: grid;
-		grid-template-columns: auto 1fr;
-		gap: 1rem;
-		padding: 1.25rem;
-		background: var(--gray-999_40);
-		border: 1px solid var(--gray-800);
-		border-radius: 0.75rem;
-	}
-
-	.rq-label {
-		font-family: var(--font-brand);
-		font-weight: 600;
-		font-size: var(--text-lg);
-		color: var(--accent-regular);
-		padding-top: 0.1rem;
-	}
-
-	.rq-card p {
-		margin: 0 !important;
-	}
-
-	/* Work packages */
-	.wp-list {
+	.subsection {
 		display: flex;
 		flex-direction: column;
 		gap: 1rem;
 	}
 
-	.wp-item {
+	.subsection-heading {
+		font-size: var(--text-xl);
+		color: var(--gray-100);
+		font-family: var(--font-brand);
+	}
+
+	/* ── Timeline (education) ── */
+	.timeline {
+		display: flex;
+		flex-direction: column;
+		gap: 0;
+		border-left: 2px solid var(--gray-800);
+		padding-left: 1.5rem;
+		margin-left: 0.5rem;
+	}
+
+	.tl-item {
+		position: relative;
+		padding-bottom: 1.75rem;
+	}
+
+	.tl-item:last-child {
+		padding-bottom: 0;
+	}
+
+	.tl-dot {
+		position: absolute;
+		left: -1.875rem;
+		top: 0.3rem;
+		width: 0.75rem;
+		height: 0.75rem;
+		border-radius: 50%;
+		background: var(--accent-regular);
+		border: 2px solid var(--gray-999);
+	}
+
+	.tl-body {
+		display: flex;
+		flex-direction: column;
+		gap: 0.25rem;
+	}
+
+	.tl-row {
+		display: flex;
+		align-items: baseline;
+		gap: 0.75rem;
+		flex-wrap: wrap;
+	}
+
+	.tl-degree {
+		font-size: var(--text-lg);
+		color: var(--gray-0);
+		font-weight: 600;
+	}
+
+	.tl-grade {
+		font-family: var(--font-brand);
+		font-size: var(--text-sm);
+		font-weight: 600;
+		color: var(--accent-text-over);
+		background: var(--accent-regular);
+		padding: 0.15em 0.55em;
+		border-radius: 999rem;
+	}
+
+	.tl-inst {
+		font-size: var(--text-sm);
+		color: var(--gray-400);
+		margin: 0;
+	}
+
+	.tl-desc {
+		font-size: var(--text-sm);
+		color: var(--gray-300);
+		line-height: 1.6;
+		margin: 0;
+	}
+
+	/* ── Professional experience ── */
+	.exp-list {
+		display: flex;
+		flex-direction: column;
+		gap: 1.25rem;
+	}
+
+	.exp-item {
 		padding: 1.25rem 1.5rem;
 		background: var(--gray-999_40);
 		border: 1px solid var(--gray-800);
-		border-radius: 0.75rem;
 		border-left: 4px solid var(--accent-regular);
+		border-radius: 0 0.75rem 0.75rem 0;
 	}
 
-	.wp-header {
+	.exp-header {
 		display: flex;
-		align-items: center;
-		gap: 0.75rem;
-		margin-bottom: 0.6rem;
+		justify-content: space-between;
+		align-items: flex-start;
+		gap: 1rem;
+		margin-bottom: 0.75rem;
+		flex-wrap: wrap;
 	}
 
-	.wp-badge {
-		font-family: var(--font-brand);
+	.exp-title-block {
+		display: flex;
+		flex-direction: column;
+		gap: 0.15rem;
+	}
+
+	.exp-role {
+		font-size: var(--text-lg);
+		color: var(--gray-0);
 		font-weight: 600;
+	}
+
+	.exp-company {
 		font-size: var(--text-sm);
-		color: var(--accent-text-over);
-		background: var(--accent-regular);
-		padding: 0.2em 0.6em;
-		border-radius: 999rem;
+		color: var(--gray-400);
+	}
+
+	.exp-period {
+		font-size: var(--text-sm);
+		color: var(--gray-400);
 		white-space: nowrap;
 	}
 
-	.wp-header h3 {
+	.exp-bullets {
+		padding-left: 1.25rem;
+		margin: 0;
+		display: flex;
+		flex-direction: column;
+		gap: 0.4rem;
+	}
+
+	.exp-bullets li {
+		font-size: var(--text-sm);
+		color: var(--gray-300);
+		line-height: 1.6;
+	}
+
+	/* ── Skills ── */
+	.skills-grid {
+		display: flex;
+		flex-direction: column;
+		gap: 0.75rem;
+	}
+
+	.skill-group {
+		display: flex;
+		align-items: flex-start;
+		gap: 1rem;
+		flex-wrap: wrap;
+	}
+
+	.skill-label {
+		font-size: var(--text-sm);
+		color: var(--gray-400);
+		min-width: 10rem;
+		padding-top: 0.2rem;
+	}
+
+	.skill-tags {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.4rem;
+	}
+
+	.tag {
+		font-size: 0.75rem;
+		color: var(--gray-200);
+		background: var(--gray-900);
+		border: 1px solid var(--gray-700);
+		padding: 0.2em 0.65em;
+		border-radius: 999rem;
+	}
+
+	/* ── References ── */
+	.refs-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+		gap: 1rem;
+	}
+
+	.ref-card {
+		padding: 1rem 1.25rem;
+		background: var(--gray-999_40);
+		border: 1px solid var(--gray-800);
+		border-radius: 0.75rem;
+		display: flex;
+		flex-direction: column;
+		gap: 0.2rem;
+	}
+
+	.ref-name {
+		font-size: var(--text-md);
+		color: var(--gray-0);
+		font-weight: 600;
+		margin: 0;
+	}
+
+	.ref-role {
+		font-size: 0.75rem;
+		color: var(--gray-400);
+		margin: 0;
+		line-height: 1.4;
+	}
+
+	.ref-card a {
+		font-size: 0.75rem;
+		color: var(--accent-regular);
+		text-decoration: none;
+		margin-top: 0.25rem;
+	}
+
+	.ref-card a:hover {
+		text-decoration: underline;
+	}
+
+	/* ── Featured project ── */
+	.featured-project {
+		display: flex;
+		flex-direction: column;
+		gap: 1.75rem;
+		padding: 2rem;
+		background: var(--gray-999_40);
+		border: 1px solid var(--gray-800);
+		border-radius: 1rem;
+		border-top: 3px solid var(--accent-regular);
+	}
+
+	.fp-header {
+		display: flex;
+		flex-direction: column;
+		gap: 0.4rem;
+	}
+
+	.fp-badge {
+		display: inline-block;
+		width: fit-content;
+		font-size: 0.75rem;
+		font-family: var(--font-brand);
+		font-weight: 600;
+		text-transform: uppercase;
+		letter-spacing: 0.06em;
+		color: var(--accent-text-over);
+		background: var(--accent-regular);
+		padding: 0.2em 0.7em;
+		border-radius: 999rem;
+	}
+
+	.fp-title {
+		font-size: var(--text-2xl);
+		color: var(--gray-0);
+		margin: 0;
+		line-height: 1.3;
+	}
+
+	.fp-subtitle {
+		font-size: var(--text-lg);
+		color: var(--gray-300);
+		font-style: italic;
+		margin: 0;
+	}
+
+	.fp-meta {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.3rem 1.5rem;
+		font-size: 0.75rem;
+		color: var(--gray-400);
+		margin-top: 0.25rem;
+	}
+
+	.fp-overview {
+		font-size: var(--text-md);
+		color: var(--gray-200);
+		line-height: 1.75;
+		margin: 0;
+	}
+
+	.fp-img-full {
+		width: 100%;
+		border-radius: 0.5rem;
+		border: 1px solid var(--gray-800);
+	}
+
+	/* Steps */
+	.steps-block {
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+	}
+
+	.steps-heading {
 		font-size: var(--text-lg);
 		color: var(--gray-0);
 		margin: 0;
 	}
 
-	.wp-item p {
-		margin: 0 !important;
-	}
-
-	/* Timeline */
-	.timeline-table {
-		border: 1px solid var(--gray-800);
-		border-radius: 0.75rem;
-		overflow: hidden;
-	}
-
-	.tl-header,
-	.tl-row {
-		display: grid;
-		grid-template-columns: 14rem 1fr 1fr 1fr 1fr;
-		gap: 0;
-	}
-
-	.tl-header {
-		background: var(--gray-900);
-		font-family: var(--font-brand);
-		font-weight: 600;
-		font-size: var(--text-sm);
-		color: var(--gray-300);
-		padding: 0.75rem 1rem;
-	}
-
-	.tl-yr {
-		text-align: center;
-	}
-
-	.tl-row {
-		padding: 0.6rem 1rem;
-		border-top: 1px solid var(--gray-800);
-		background: var(--gray-999_40);
-		align-items: center;
-		gap: 0.5rem;
-	}
-
-	.tl-row:nth-child(even) {
-		background: transparent;
-	}
-
-	.tl-label {
-		font-size: var(--text-sm);
-		color: var(--gray-200);
-		font-weight: 500;
-	}
-
-	.tl-bar-cell {
-		padding: 0 0.5rem;
-		display: flex;
-		align-items: center;
-	}
-
-	.tl-bar {
-		height: 0.6rem;
-		background: var(--gradient-accent-orange);
-		border-radius: 999rem;
-		min-width: 0;
-	}
-
-	/* Challenges */
-	.challenge-grid {
+	.steps-grid {
 		display: grid;
 		grid-template-columns: 1fr 1fr;
 		gap: 1rem;
 	}
 
-	.challenge-card {
-		padding: 1.25rem;
-		background: var(--gray-999_40);
+	.step {
+		display: grid;
+		grid-template-columns: auto 1fr;
+		gap: 0.75rem;
+		padding: 1rem 1.25rem;
+		background: var(--gray-900);
 		border: 1px solid var(--gray-800);
-		border-radius: 0.75rem;
+		border-radius: 0.5rem;
 	}
 
-	.challenge-card h3 {
-		font-size: var(--text-md);
-		color: var(--gray-0);
-		margin-bottom: 0.3rem;
+	.step-num {
+		font-family: var(--font-brand);
+		font-size: var(--text-2xl);
+		font-weight: 700;
+		color: var(--accent-regular);
+		line-height: 1;
+		padding-top: 0.1rem;
 	}
 
-	.challenge-desc {
+	.step-body {
+		display: flex;
+		flex-direction: column;
+		gap: 0.35rem;
+	}
+
+	.step-body strong {
 		font-size: var(--text-sm);
-		color: var(--gray-400);
-		font-style: italic;
-		margin-bottom: 0.5rem !important;
+		color: var(--gray-0);
 	}
 
-	.challenge-card p {
+	.step-body p {
 		font-size: var(--text-sm);
 		color: var(--gray-300);
-		margin: 0 !important;
 		line-height: 1.6;
+		margin: 0;
 	}
 
-	/* Outputs */
-	.outputs-list {
-		list-style: none;
-		padding: 0;
+	/* Results row */
+	.results-row {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 1rem;
+	}
+
+	.result-block {
+		display: flex;
+		flex-direction: column;
+		gap: 0.4rem;
+	}
+
+	.result-img {
+		width: 100%;
+		border-radius: 0.5rem;
+		border: 1px solid var(--gray-800);
+	}
+
+	.img-caption {
+		font-size: 0.75rem;
+		color: var(--gray-400);
+		text-align: center;
+		margin: 0;
+		font-style: italic;
+	}
+
+	/* Findings */
+	.findings-box {
+		padding: 1.25rem 1.5rem;
+		background: var(--accent-overlay);
+		border-left: 4px solid var(--accent-regular);
+		border-radius: 0 0.5rem 0.5rem 0;
 		display: flex;
 		flex-direction: column;
 		gap: 0.75rem;
 	}
 
-	.outputs-list li {
-		padding-left: 1.5rem;
-		position: relative;
+	.findings-heading {
+		font-size: var(--text-lg);
+		color: var(--gray-0);
+		margin: 0;
+	}
+
+	.findings-list {
+		padding-left: 1.25rem;
+		margin: 0;
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+	}
+
+	.findings-list li {
+		font-size: var(--text-sm);
+		color: var(--gray-200);
+		line-height: 1.65;
+	}
+
+	/* ── Secondary project (Po River) ── */
+	.secondary-project {
+		display: flex;
+		flex-direction: column;
+		gap: 1.25rem;
+		padding: 1.75rem;
+		background: var(--gray-999_40);
+		border: 1px solid var(--gray-800);
+		border-radius: 1rem;
+	}
+
+	.sp-header {
+		display: flex;
+		flex-direction: column;
+		gap: 0.35rem;
+	}
+
+	.sp-badge {
+		display: inline-block;
+		width: fit-content;
+		font-size: 0.75rem;
+		font-family: var(--font-brand);
+		font-weight: 600;
+		text-transform: uppercase;
+		letter-spacing: 0.06em;
+		color: var(--gray-200);
+		background: var(--gray-800);
+		padding: 0.2em 0.7em;
+		border-radius: 999rem;
+	}
+
+	.sp-title {
+		font-size: var(--text-xl);
+		color: var(--gray-0);
+		margin: 0;
+		line-height: 1.3;
+	}
+
+	.sp-meta {
+		font-size: 0.75rem;
+		color: var(--gray-400);
+		margin: 0;
+	}
+
+	.sp-body {
+		display: grid;
+		grid-template-columns: 1fr 18rem;
+		gap: 1.5rem;
+		align-items: start;
+	}
+
+	.sp-text {
+		display: flex;
+		flex-direction: column;
+		gap: 0.75rem;
+	}
+
+	.sp-text p {
+		font-size: var(--text-sm);
+		color: var(--gray-300);
+		line-height: 1.7;
+		margin: 0;
+	}
+
+	.sp-results {
+		padding-left: 1.25rem;
+		margin: 0;
+		display: flex;
+		flex-direction: column;
+		gap: 0.4rem;
+	}
+
+	.sp-results li {
+		font-size: var(--text-sm);
 		color: var(--gray-200);
 		line-height: 1.6;
 	}
 
-	.outputs-list li::before {
-		content: '▸';
-		position: absolute;
-		left: 0;
-		color: var(--accent-regular);
-	}
-
-	.pdf-cta {
+	.sp-imgs {
 		display: flex;
-		justify-content: flex-start;
-		padding-top: 1rem;
+		flex-direction: column;
+		gap: 0.75rem;
 	}
 
+	.sp-img {
+		width: 100%;
+		border-radius: 0.5rem;
+		border: 1px solid var(--gray-800);
+	}
+
+	/* ── Responsive ── */
 	@media (max-width: 50em) {
-		.challenge-grid {
+		.steps-grid {
 			grid-template-columns: 1fr;
 		}
 
-		.tl-header,
-		.tl-row {
-			grid-template-columns: 9rem 1fr 1fr 1fr 1fr;
+		.results-row {
+			grid-template-columns: 1fr;
 		}
 
-		.meta-download {
-			margin-left: 0;
+		.sp-body {
+			grid-template-columns: 1fr;
+		}
+
+		.sp-imgs {
+			display: none;
+		}
+
+		.skill-label {
+			min-width: 0;
+			width: 100%;
+		}
+
+		.refs-grid {
+			grid-template-columns: 1fr;
 		}
 	}
 </style>
